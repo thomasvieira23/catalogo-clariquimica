@@ -185,29 +185,44 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 
 /* ══ RESPONSIVE ══════════════════════════════════ */
 @media(max-width:559px){
-  /* Quadrados: esconder no mobile — atrapalham leitura */
-  .sq-wrap{display:none;}
+  /* Capa: layout compacto, texto sobe, quadrados ficam em baixo */
+  .cover-content{padding:20px 20px 0;justify-content:flex-start;gap:0;}
+  .cover-top{flex-direction:column;gap:8px;align-items:flex-start;}
+  .cover-logo img{height:48px!important;width:auto!important;}
 
-  /* Capa: logo + parceiros em coluna, sem corte */
-  .cover-content{padding:24px 20px;}
-  .cover-top{flex-direction:column;gap:10px;align-items:flex-start;}
-  .cover-logo img{height:52px!important;width:auto!important;}
-
-  /* Parceiros: em linha logo abaixo do logo CQ */
-  .cover-dist{flex-direction:column;align-items:flex-start;gap:6px;}
+  /* Parceiros abaixo do logo */
+  .cover-dist{flex-direction:column;align-items:flex-start;gap:4px;}
   .cover-dist-label{font-size:8px!important;letter-spacing:1.5px;}
   .cover-partners-row{gap:10px;flex-wrap:nowrap;}
-  .partner-sud{height:16px!important;max-width:100px!important;}
-  .partner-lan{height:26px!important;max-width:80px!important;}
+  .partner-sud{height:15px!important;max-width:95px!important;}
+  .partner-lan{height:24px!important;max-width:78px!important;}
   .partner-sep{height:14px!important;}
 
-  /* Texto da capa: ocupa 100% sem limite */
-  .cover-main{max-width:100%!important;padding-top:16px!important;}
-  .cover-headline{font-size:clamp(38px,11vw,52px)!important;letter-spacing:-1px!important;}
-  .cover-sub{max-width:100%!important;font-size:13px!important;}
+  /* Texto: sobe, sem padding extra, ocupa largura total */
+  .cover-main{max-width:100%!important;padding-top:12px!important;padding-bottom:0;}
+  .cover-headline{font-size:clamp(36px,10.5vw,50px)!important;letter-spacing:-1px!important;}
+  .cover-sub{max-width:100%!important;font-size:12.5px!important;margin-top:10px!important;}
 
-  /* Índice de linhas: esconder no mobile (economiza espaço) */
+  /* Quadrados: visíveis mas menores e só na parte inferior */
+  .sq-wrap{display:block;}
+  .sq-a1{width:80px!important;height:80px!important;right:-10px!important;bottom:30px!important;}
+  .sq-a2{width:55px!important;height:55px!important;right:60px!important;bottom:8px!important;}
+  .sq-a3{width:44px!important;height:44px!important;right:12px!important;bottom:100px!important;}
+  .sq-a4{width:32px!important;height:32px!important;right:108px!important;bottom:38px!important;}
+  .sq-a5{width:24px!important;height:24px!important;right:85px!important;bottom:110px!important;}
+  .sq-a6{width:18px!important;height:18px!important;right:148px!important;bottom:22px!important;}
+  .sq-a7{width:14px!important;height:14px!important;right:130px!important;bottom:90px!important;}
+  .sq-a8{width:10px!important;height:10px!important;right:170px!important;bottom:60px!important;}
+  /* Esconder os menores e os laterais */
+  .sq-a9,.sq-a10,.sq-a11,.sq-a12,.sq-a13,.sq-a14,.sq-a15{display:none!important;}
+  .sq-b1,.sq-b2,.sq-b3,.sq-b4,.sq-b5{display:none!important;}
+
+  /* Índice e bottom: esconder */
   .cover-bottom{display:none;}
+
+  /* Garantir que quadrados ficam ATRÁS do texto */
+  .sq-wrap{z-index:0!important;}
+  .cover-content{z-index:3!important;}
 }
 @media(min-width:560px){
   .product-grid{grid-template-columns:repeat(3,1fr);}
