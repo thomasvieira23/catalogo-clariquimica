@@ -22,7 +22,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 .cover{min-height:100svh;background:#fff;display:flex;flex-direction:column;position:relative;overflow:hidden;}
 
 /* Quadrados — APENAS canto inferior direito subindo pela lateral */
-.sq-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none;}
+.sq-wrap{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;}
 .sq{position:absolute;border-radius:6px;animation:sqIn .8s cubic-bezier(.22,1,.36,1) both;}
 @keyframes sqIn{from{opacity:0;transform:scale(.5) translate(30px,30px);}to{opacity:1;transform:scale(1) translate(0,0);}}
 
@@ -56,7 +56,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 .cover-stripe{position:absolute;bottom:0;left:0;right:0;height:4px;display:flex;z-index:5;}
 .cover-stripe span{flex:1;}
 
-.cover-content{position:relative;z-index:2;flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,5vw,52px) clamp(24px,6vw,72px);}
+.cover-content{position:relative;z-index:3;flex:1;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(28px,5vw,52px) clamp(24px,6vw,72px);}
 
 /* Topo: logo grande + parceiros */
 .cover-top{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;}
@@ -184,6 +184,31 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 .empty svg{opacity:.35;display:block;margin:0 auto 12px;}.empty p{font-size:15px;font-weight:500;}
 
 /* ══ RESPONSIVE ══════════════════════════════════ */
+@media(max-width:559px){
+  /* Quadrados: esconder no mobile — atrapalham leitura */
+  .sq-wrap{display:none;}
+
+  /* Capa: logo + parceiros em coluna, sem corte */
+  .cover-content{padding:24px 20px;}
+  .cover-top{flex-direction:column;gap:10px;align-items:flex-start;}
+  .cover-logo img{height:52px!important;width:auto!important;}
+
+  /* Parceiros: em linha logo abaixo do logo CQ */
+  .cover-dist{flex-direction:column;align-items:flex-start;gap:6px;}
+  .cover-dist-label{font-size:8px!important;letter-spacing:1.5px;}
+  .cover-partners-row{gap:10px;flex-wrap:nowrap;}
+  .partner-sud{height:16px!important;max-width:100px!important;}
+  .partner-lan{height:26px!important;max-width:80px!important;}
+  .partner-sep{height:14px!important;}
+
+  /* Texto da capa: ocupa 100% sem limite */
+  .cover-main{max-width:100%!important;padding-top:16px!important;}
+  .cover-headline{font-size:clamp(38px,11vw,52px)!important;letter-spacing:-1px!important;}
+  .cover-sub{max-width:100%!important;font-size:13px!important;}
+
+  /* Índice de linhas: esconder no mobile (economiza espaço) */
+  .cover-bottom{display:none;}
+}
 @media(min-width:560px){
   .product-grid{grid-template-columns:repeat(3,1fr);}
   .toolbar{flex-direction:row;}.toolbar-row2{flex:1;}.search-wrap{flex:2;}
