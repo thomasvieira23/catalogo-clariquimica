@@ -123,8 +123,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 .line-section{margin-bottom:12px;}.line-section.hidden{display:none;}
 
 /* Accordion */
-.line-banner{cursor:pointer;user-select:none;transition:box-shadow .18s;}
-.line-banner:hover{box-shadow:0 4px 16px rgba(0,0,0,.10);}
+
 .line-toggle{
   display:flex;align-items:center;justify-content:center;
   width:32px;height:32px;border-radius:50%;
@@ -160,7 +159,13 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
   padding:12px;
 }
 
-.line-banner{display:flex;border-radius:var(--r-lg);overflow:hidden;margin-bottom:20px;background:var(--surface);box-shadow:var(--shadow-sm);border:1px solid var(--borda);}
+.line-banner{
+  display:flex;border-radius:var(--r-lg);overflow:hidden;
+  margin-bottom:0;background:var(--surface);
+  box-shadow:var(--shadow-sm);border:1px solid var(--borda);
+  cursor:pointer;user-select:none;transition:box-shadow .18s;
+}
+.line-banner:hover{box-shadow:0 4px 16px rgba(0,0,0,.10);}
 .line-accent{width:5px;flex-shrink:0;}
 .line-body{flex:1;padding:18px 20px;}
 .line-body-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px;}
@@ -171,6 +176,8 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 .badge-logo{background:white;border:1px solid #E4E8EE;padding:3px 8px;display:inline-flex;align-items:center;border-radius:20px;}
 .badge-logo img{height:14px;width:auto;object-fit:contain;display:block;}
 .badge-l{background:#E8F4FF;color:#004080;border:1px solid #90C0F0;}
+.badge-logo-l{background:white;border:1px solid #E4E8EE;padding:2px 8px;display:inline-flex;align-items:center;border-radius:20px;}
+.badge-logo-l img{height:16px;width:auto;object-fit:contain;display:block;}
 .line-desc{font-size:12.5px;font-weight:400;color:var(--muted);line-height:1.55;margin-bottom:10px;}
 .line-meta{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
 .line-chips{display:flex;gap:5px;flex-wrap:wrap;}
@@ -486,15 +493,88 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
   <div class="product-grid" id="grid-hostatint"></div>
 </section>
 
+
+<section class="line-section" data-fab="Lanxess" data-apps="Tintas imobiliárias,Tintas industriais,Construção,Concreto,Argamassa" id="line-bayferrox-red">
+  <div class="line-banner"><div class="line-accent" style="background:#C8191A"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Bayferrox<sup>®</sup> Vermelho</div><span class="line-badge badge-logo"><img src="assets/logo-lanxess.png" alt="Lanxess"></span></div>
+      <div class="line-desc">Pigmentos inorgânicos de óxido de ferro vermelho sintético. Alta resistência à luz, intempérie, cal e álcalis. Estabilidade ao calor mínimo de 300°C. Indicados para tintas imobiliárias, industriais e construção civil.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Tintas industriais</span><span class="line-chip">Construção</span></div><span class="line-count" id="count-bayferrox-red"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-bayferrox-red"></div>
+</section>
+
+<section class="line-section" data-fab="Lanxess" data-apps="Plásticos,Tintas industriais,Tintas imobiliárias" id="line-colortherm-red">
+  <div class="line-banner"><div class="line-accent" style="background:#A01010"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Colortherm<sup>®</sup> Vermelho</div><span class="line-badge badge-logo"><img src="assets/logo-lanxess.png" alt="Lanxess"></span></div>
+      <div class="line-desc">Pigmentos micronizados de óxido de ferro vermelho para plásticos. Facilmente dispersíveis mesmo em baixos tempos de residência e baixas forças de cisalhamento. Estabilidade ao calor superior a 300°C.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Plásticos</span><span class="line-chip">Tintas industriais</span><span class="line-chip">Tintas imobiliárias</span></div><span class="line-count" id="count-colortherm-red"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-colortherm-red"></div>
+</section>
+
+<section class="line-section" data-fab="Lanxess" data-apps="Tintas imobiliárias,Tintas industriais,Construção,Concreto,Argamassa" id="line-bayferrox-yellow">
+  <div class="line-banner"><div class="line-accent" style="background:#C8A000"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Bayferrox<sup>®</sup> Amarelo</div><span class="line-badge badge-logo"><img src="assets/logo-lanxess.png" alt="Lanxess"></span></div>
+      <div class="line-desc">Pigmentos de óxido de ferro amarelo (goethita). Partículas aciculares com alto poder de tingimento. Estabilidade ao calor de aprox. 180°C. Ideais para tintas, revestimentos e materiais de construção.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Construção</span><span class="line-chip">Concreto</span></div><span class="line-count" id="count-bayferrox-yellow"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-bayferrox-yellow"></div>
+</section>
+
+<section class="line-section" data-fab="Lanxess" data-apps="Plásticos,Tintas industriais" id="line-colortherm-yellow">
+  <div class="line-banner"><div class="line-accent" style="background:#C09000"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Colortherm<sup>®</sup> Amarelo</div><span class="line-badge badge-logo"><img src="assets/logo-lanxess.png" alt="Lanxess"></span></div>
+      <div class="line-desc">Pigmentos amarelos especiais para plásticos com alta estabilidade ao calor (220–300°C). Indicados para polímeros como HD-PE, PS, ABS e PA que requerem processamento a altas temperaturas.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Plásticos</span><span class="line-chip">Tintas industriais</span></div><span class="line-count" id="count-colortherm-yellow"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-colortherm-yellow"></div>
+</section>
+
+<section class="line-section" data-fab="Lanxess" data-apps="Tintas imobiliárias,Tintas industriais,Plásticos,Construção,Concreto" id="line-bayferrox-black">
+  <div class="line-banner"><div class="line-accent" style="background:#2A2A2A"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Bayferrox<sup>®</sup> Preto / Marrom</div><span class="line-badge badge-logo"><img src="assets/logo-lanxess.png" alt="Lanxess"></span></div>
+      <div class="line-desc">Pigmentos de óxido de ferro preto (magnetita) e combinações de marrom. Alta resistência à luz e intempérie. Estabilidade ao calor acima de 300°C. Aplicáveis em tintas, construção e plásticos.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Construção</span><span class="line-chip">Plásticos</span></div><span class="line-count" id="count-bayferrox-black"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-bayferrox-black"></div>
+</section>
+
+<section class="line-section" data-fab="Lanxess" data-apps="Tintas industriais,Plásticos,Construção,Tintas imobiliárias" id="line-colortherm-green">
+  <div class="line-banner"><div class="line-accent" style="background:#3A6030"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Colortherm<sup>®</sup> Verde</div><span class="line-badge badge-logo"><img src="assets/logo-lanxess.png" alt="Lanxess"></span></div>
+      <div class="line-desc">Pigmentos de óxido de cromo (III). Estabilidade ao calor extremamente alta até 1000°C. Insolúvel em água e ácidos. Excelente resistência à luz e intempérie. Adequado para todas as aplicações.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas industriais</span><span class="line-chip">Plásticos</span><span class="line-chip">Construção</span></div><span class="line-count" id="count-colortherm-green"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-colortherm-green"></div>
+</section>
+
 <div class="empty" id="emptyState">
   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
   <p>Nenhum produto encontrado.</p>
 </div>
 
-</div><!-- main-inner -->
-</main>
 
-<!-- ════ OVERLAY DETALHE ═════════════════════════ -->
+
+<!-- ════ LINHA: BAYFERROX VERMELHO ════════════════════════ -->
+<!-- ════ LINHA: COLORTHERM VERMELHO ═══════════════════════ -->
+<!-- ════ LINHA: BAYFERROX AMARELO ═════════════════════════ -->
+<!-- ════ LINHA: COLORTHERM AMARELO ════════════════════════ -->
+<!-- ════ LINHA: BAYFERROX PRETO / MARROM ══════════════════ -->
+<!-- ════ LINHA: COLORTHERM VERDE ══════════════════════════ -->
+</div><!-- main-inner -->
+
 <div id="overlay">
   <div class="detail" id="detailPanel">
     <div class="detail-handle"></div>
@@ -563,7 +643,11 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
     </div>
   </div>
 </div>
-</div></main>
+
+
+
+<!-- ════ OVERLAY DETALHE ═════════════════════════ -->
+
 
 <!-- ════ OVERLAY DETALHE ════════════════════════ -->
 <div id="overlay">
@@ -873,6 +957,74 @@ const LINE_MAP = {
   hostatint: {fab:"Sudarshan", label:"Hostatint® 500"},
 };
 
+// ── DADOS LANXESS ──────────────────────────────────────────────────────
+var PRODUCTS_LANXESS = {
+
+  'bayferrox-red': [
+    {nome:"Bayferrox® 110",  ci:"Pigment Red 101", cor:"#8B3020", corte:"#C07868", tom:"Vermelho Amarelado",   luz:8, calor:8, solv:8, teor:"97,1% Fe2O3", emb:"25 kg saco", apps:["Construção","Concreto","Argamassa"]},
+    {nome:"Bayferrox® 110 M",ci:"Pigment Red 101", cor:"#8B3020", corte:"#C07868", tom:"Vermelho Amarelado (micronizado)", luz:8, calor:8, solv:8, teor:"97,1% Fe2O3", emb:"25 kg saco", apps:["Tintas imobiliárias","Tintas industriais","Construção"]},
+    {nome:"Bayferrox® 120",  ci:"Pigment Red 101", cor:"#852818", corte:"#BC7060", tom:"Vermelho Médio",        luz:8, calor:8, solv:8, teor:"97,1% Fe2O3", emb:"25 kg saco", apps:["Construção","Concreto","Argamassa"]},
+    {nome:"Bayferrox® 120 M",ci:"Pigment Red 101", cor:"#852818", corte:"#BC7060", tom:"Vermelho Médio (micronizado)", luz:8, calor:8, solv:8, teor:"97,1% Fe2O3", emb:"25 kg saco", apps:["Tintas imobiliárias","Tintas industriais","Construção"]},
+    {nome:"Bayferrox® 130",  ci:"Pigment Red 101", cor:"#7A2010", corte:"#B46858", tom:"Vermelho Azulado",      luz:8, calor:8, solv:8, teor:"97,2% Fe2O3", emb:"25 kg saco", apps:["Construção","Concreto","Argamassa"]},
+    {nome:"Bayferrox® 130 M",ci:"Pigment Red 101", cor:"#7A2010", corte:"#B46858", tom:"Vermelho Azulado (micronizado)", luz:8, calor:8, solv:8, teor:"97,2% Fe2O3", emb:"25 kg saco", apps:["Tintas imobiliárias","Tintas industriais","Construção"]},
+    {nome:"Bayferrox® 130 BM",ci:"Pigment Red 101",cor:"#721808", corte:"#AC6050", tom:"Vermelho Azulado Escuro",luz:8, calor:8, solv:8, teor:"97,2% Fe2O3", emb:"25 kg saco", apps:["Tintas imobiliárias","Tintas industriais"]},
+    {nome:"Bayferrox® 140",  ci:"Pigment Red 101", cor:"#6E1808", corte:"#A85848", tom:"Vermelho Violáceo",     luz:8, calor:8, solv:8, teor:"97,2% Fe2O3", emb:"25 kg saco", apps:["Construção","Concreto","Argamassa"]},
+    {nome:"Bayferrox® 140 M",ci:"Pigment Red 101", cor:"#6E1808", corte:"#A85848", tom:"Vermelho Violáceo (micronizado)",luz:8,calor:8,solv:8,teor:"97,2% Fe2O3", emb:"25 kg saco", apps:["Tintas imobiliárias","Tintas industriais","Construção"]},
+    {nome:"Bayferrox® 160",  ci:"Pigment Red 101", cor:"#681408", corte:"#A05050", tom:"Vermelho Violeta",      luz:8, calor:8, solv:8, teor:"97,2% Fe2O3", emb:"25 kg saco", apps:["Construção","Concreto","Argamassa"]},
+    {nome:"Bayferrox® 160 M",ci:"Pigment Red 101", cor:"#681408", corte:"#A05050", tom:"Vermelho Violeta (micronizado)",luz:8,calor:8,solv:8,teor:"97,2% Fe2O3", emb:"25 kg saco", apps:["Tintas imobiliárias","Tintas industriais","Construção"]},
+    {nome:"Bayferrox® 180 M",ci:"Pigment Red 101", cor:"#604040", corte:"#9C7878", tom:"Vermelho Acastanhado",  luz:8, calor:8, solv:8, teor:"97,3% Fe2O3", emb:"25 kg saco", apps:["Tintas imobiliárias","Tintas industriais","Construção"]},
+    {nome:"Bayferrox® 510",  ci:"Pigment Red 101", cor:"#8C1A10", corte:"#C05848", tom:"Vermelho Vivo",         luz:8, calor:8, solv:8, teor:"—",            emb:"25 kg saco", apps:["Tintas industriais","Primários anticorrosivos"]},
+    {nome:"Bayferrox® 520",  ci:"Pigment Red 101", cor:"#841808", corte:"#BC5040", tom:"Vermelho Crômico",      luz:8, calor:7, solv:7, teor:"—",            emb:"25 kg saco", apps:["Plásticos","Tintas industriais","Primários anticorrosivos"]},
+  ],
+
+  'colortherm-red': [
+    {nome:"Colortherm® Red 110 M",ci:"Pigment Red 101",cor:"#8B3020",corte:"#C48070",tom:"Vermelho Amarelado",luz:8,calor:8,solv:8,teor:">300°C", emb:"25 kg saco", apps:["Plásticos","Tintas industriais","Tintas imobiliárias"]},
+    {nome:"Colortherm® Red 120 M",ci:"Pigment Red 101",cor:"#852818",corte:"#BC7060",tom:"Vermelho Médio",    luz:8,calor:8,solv:8,teor:">300°C", emb:"25 kg saco", apps:["Plásticos","Tintas industriais"]},
+    {nome:"Colortherm® Red 130 M",ci:"Pigment Red 101",cor:"#7A2010",corte:"#B06858",tom:"Vermelho Azulado",  luz:8,calor:8,solv:8,teor:">300°C", emb:"25 kg saco", apps:["Plásticos","Tintas industriais"]},
+    {nome:"Colortherm® Red 180 M",ci:"Pigment Red 101",cor:"#604040",corte:"#9C7878",tom:"Vermelho Acastanhado",luz:8,calor:8,solv:8,teor:">300°C",emb:"25 kg saco",apps:["Plásticos","Tintas industriais"]},
+  ],
+
+  'bayferrox-yellow': [
+    {nome:"Bayferrox® 912 LOM",ci:"Pigment Yellow 42",cor:"#B88018",corte:"#DCC060",tom:"Amarelo Escuro",      luz:8,calor:6,solv:6,teor:"99,4% FeOOH",emb:"25 kg saco",apps:["Tintas imobiliárias","Tintas industriais"]},
+    {nome:"Bayferrox® 918 LO (PLE)",ci:"Pigment Yellow 42",cor:"#C09018",corte:"#E0C858",tom:"Amarelo Ocre Escuro",luz:8,calor:6,solv:6,teor:"99,4% FeOOH",emb:"25 kg saco",apps:["Construção","Concreto"]},
+    {nome:"Bayferrox® 918 LOM",ci:"Pigment Yellow 42",cor:"#C09018",corte:"#E0C858",tom:"Amarelo Ocre",        luz:8,calor:6,solv:6,teor:"99,4% FeOOH",emb:"25 kg saco",apps:["Tintas imobiliárias","Tintas industriais"]},
+    {nome:"Bayferrox® 920 LO", ci:"Pigment Yellow 42",cor:"#C8A020",corte:"#E8D070",tom:"Amarelo Ocre",        luz:8,calor:6,solv:6,teor:"99,4% FeOOH",emb:"25 kg saco",apps:["Construção","Concreto","Argamassa"]},
+    {nome:"Bayferrox® 920 LOM",ci:"Pigment Yellow 42",cor:"#C8A020",corte:"#E8D070",tom:"Amarelo Ocre",        luz:8,calor:6,solv:6,teor:"99,4% FeOOH",emb:"25 kg saco",apps:["Tintas imobiliárias","Tintas industriais"]},
+    {nome:"Bayferrox® 921",    ci:"Pigment Yellow 42",cor:"#D0A818",corte:"#ECD870",tom:"Amarelo Ocre Claro",  luz:8,calor:6,solv:6,teor:"99,4% FeOOH",emb:"25 kg saco",apps:["Construção","Concreto","Argamassa"]},
+  ],
+
+  'colortherm-yellow': [
+    {nome:"Colortherm® Yellow 20", ci:"Pigment Yellow 42", cor:"#C8A030",corte:"#E8D070",tom:"Amarelo Ocre",    luz:8,calor:8,solv:8,teor:"—",emb:"25 kg saco",apps:["Plásticos","Tintas industriais"]},
+    {nome:"Colortherm® Yellow 3950",ci:"Pigment Yellow 119",cor:"#C89830",corte:"#E8C878",tom:"Amarelo Dourado", luz:8,calor:8,solv:8,teor:"—",emb:"25 kg saco",apps:["Plásticos","Tintas industriais"]},
+    {nome:"Colortherm® Yellow 30", ci:"Pigment Yellow 119",cor:"#C09028",corte:"#E0C068",tom:"Amarelo Dourado Escuro",luz:8,calor:8,solv:8,teor:"—",emb:"25 kg saco",apps:["Plásticos","Tintas industriais"]},
+  ],
+
+  'bayferrox-black': [
+    {nome:"Bayferrox® 318 M", ci:"Pigment Black 11",cor:"#282828",corte:"#787878",tom:"Preto Azulado",         luz:8,calor:8,solv:8,teor:"96,5% Fe3O4",emb:"25 kg saco",apps:["Tintas imobiliárias","Tintas industriais","Plásticos","Construção"]},
+    {nome:"Bayferrox® 328",   ci:"Pigment Black 11",cor:"#1E1E1E",corte:"#686868",tom:"Preto",                  luz:8,calor:8,solv:8,teor:"95,8% Fe3O4",emb:"25 kg saco",apps:["Tintas imobiliárias","Tintas industriais"]},
+    {nome:"Bayferrox® 340",   ci:"Pigment Black 11",cor:"#1A1A1A",corte:"#606060",tom:"Preto",                  luz:8,calor:8,solv:8,teor:"95,8% Fe3O4",emb:"25 kg saco",apps:["Construção","Concreto","Argamassa"]},
+    {nome:"Bayferrox® 303 T", ci:"Pigment Black 33",cor:"#383030",corte:"#888080",tom:"Preto/Cinza (res. calor 500°C)",luz:8,calor:8,solv:8,teor:"77,2% Fe3O4",emb:"25 kg saco",apps:["Tintas industriais","Plásticos","Construção"]},
+    {nome:"Bayferrox® 601 M", ci:"PI Red/Yellow/Black",cor:"#7A4820",corte:"#B08860",tom:"Marrom Médio",         luz:8,calor:8,solv:8,teor:"97,2%",emb:"25 kg saco",apps:["Construção","Concreto","Tintas industriais"]},
+    {nome:"Bayferrox® 658 M", ci:"PI Red/Yellow/Black",cor:"#6A3818",corte:"#A07858",tom:"Marrom Escuro",         luz:8,calor:8,solv:8,teor:"96,9%",emb:"25 kg saco",apps:["Construção","Concreto","Tintas industriais"]},
+    {nome:"Bayferrox® 975 M", ci:"PI Red/Yellow/Black",cor:"#8C5828",corte:"#C09868",tom:"Marrom Avermelhado",    luz:8,calor:8,solv:8,teor:"98,7%",emb:"25 kg saco",apps:["Construção","Concreto","Tintas industriais"]},
+  ],
+
+  'colortherm-green': [
+    {nome:"Colortherm® Green GN",   ci:"Pigment Green 17",cor:"#3A6030",corte:"#88A878",tom:"Verde Óxido de Cromo",              luz:8,calor:8,solv:8,teor:"99,0% Cr2O3",emb:"25 kg saco",apps:["Construção","Tintas industriais","Plásticos","Tintas imobiliárias"]},
+    {nome:"Colortherm® Green GN-M", ci:"Pigment Green 17",cor:"#3A6030",corte:"#88A878",tom:"Verde Óxido de Cromo (micronizado)",luz:8,calor:8,solv:8,teor:"99,0% Cr2O3",emb:"25 kg saco",apps:["Tintas industriais","Plásticos","Tintas imobiliárias"]},
+  ],
+};
+
+var LINE_MAP_LANXESS = {
+  'bayferrox-red':      {fab:"Lanxess", label:"Bayferrox® Vermelho"},
+  'colortherm-red':     {fab:"Lanxess", label:"Colortherm® Vermelho"},
+  'bayferrox-yellow':   {fab:"Lanxess", label:"Bayferrox® Amarelo"},
+  'colortherm-yellow':  {fab:"Lanxess", label:"Colortherm® Amarelo"},
+  'bayferrox-black':    {fab:"Lanxess", label:"Bayferrox® Preto / Marrom"},
+  'colortherm-green':   {fab:"Lanxess", label:"Colortherm® Verde"},
+};
+
+
 
 function makeBar(v, elId) {
   var el = document.getElementById(elId);
@@ -936,10 +1088,70 @@ function buildCards() {
       grid.appendChild(card);
     }
   }
+  // Lanxess
+  var lkeys2 = Object.keys(PRODUCTS_LANXESS);
+  for (var ki2 = 0; ki2 < lkeys2.length; ki2++) {
+    var lk2 = lkeys2[ki2];
+    var prods2 = PRODUCTS_LANXESS[lk2];
+    var grid2 = document.getElementById('grid-' + lk2);
+    if (!grid2) continue;
+    var fab2  = LINE_MAP_LANXESS[lk2].fab;
+    var lbl2  = LINE_MAP_LANXESS[lk2].label;
+    var cnt2  = document.getElementById('count-' + lk2);
+    if (cnt2) cnt2.textContent = prods2.length + (prods2.length > 1 ? ' produtos' : ' produto');
+    for (var pi2 = 0; pi2 < prods2.length; pi2++) {
+      var p2 = prods2[pi2];
+      var card2 = document.createElement('div');
+      card2.className = 'product-card';
+      card2.setAttribute('data-search', (p2.nome + ' ' + p2.ci).toLowerCase());
+      card2.setAttribute('data-apps', p2.apps.join(','));
+      card2.setAttribute('data-fab', fab2);
+      var tags2 = '';
+      for (var ai2 = 0; ai2 < Math.min(p2.apps.length, 2); ai2++) {
+        tags2 += '<span class="card-tag">' + p2.apps[ai2] + '</span>';
+      }
+      card2.innerHTML =
+        '<div class="swatch">' +
+          '<div class="swatch-full" style="background:' + p2.cor + '"></div>' +
+          '<div class="swatch-cut" style="background:' + p2.corte + '"></div>' +
+          '<div class="swatch-labels"><span class="swatch-tag">Tom pleno</span><span class="swatch-tag">Corte 1:9</span></div>' +
+        '</div>' +
+        '<div class="card-body">' +
+          '<div class="card-name">' + p2.nome + '</div>' +
+          '<div class="card-ci">' + p2.ci + '</div>' +
+          '<div class="card-tags">' + tags2 + '</div>' +
+          '<div class="card-solidez"><span class="solidez-label">Solidez \u00e0 luz</span>' + makeDots(p2.luz) + '</div>' +
+        '</div>';
+      (function(lk_, idx_, f_, l_) {
+        card2.addEventListener('click', function() { openDetailLanxess(lk_, idx_, f_, l_); });
+      })(lk2, pi2, fab2, lbl2);
+      grid2.appendChild(card2);
+    }
+  }
+}
+
+function openDetailLanxess(lk, i, fab, lbl) {
+  var p = PRODUCTS_LANXESS[lk][i];
+  openDetailCommon(p, fab, lbl);
+}
+
+function openDetailLanxess(lk, i, fab, lbl) {
+  var p = PRODUCTS_LANXESS[lk][i];
+  _openDetailPanel(p, fab, lbl);
 }
 
 function openDetail(lk, i, fab, lbl) {
   var p = PRODUCTS[lk][i];
+  _openDetailPanel(p, fab, lbl);
+}
+
+function _openDetailPanel(p, fab, lbl) {
+  openDetailCommon(p, fab, lbl);
+}
+
+function openDetailCommon(p, fab, lbl) {
+  var p2 = p; // alias para manter compatibilidade
+  // usar p direto:
   document.getElementById('dSwatchFull').style.background = p.cor;
   document.getElementById('dSwatchCut').style.background  = p.corte;
   document.getElementById('dName').textContent = p.nome;
@@ -1065,3 +1277,5 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
+
+</main>
