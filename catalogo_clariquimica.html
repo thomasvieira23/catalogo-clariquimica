@@ -176,6 +176,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 .badge-logo{background:white;border:1px solid #E4E8EE;padding:3px 8px;display:inline-flex;align-items:center;border-radius:20px;}
 .badge-logo img{height:14px;width:auto;object-fit:contain;display:block;}
 .badge-l{background:#E8F4FF;color:#004080;border:1px solid #90C0F0;}
+.badge-cq{background:#FEF0E8;color:#A03000;border:1px solid #F0A070;}
 .badge-logo-l{background:white;border:1px solid #E4E8EE;padding:2px 8px;display:inline-flex;align-items:center;border-radius:20px;}
 .badge-logo-l img{height:16px;width:auto;object-fit:contain;display:block;}
 .line-desc{font-size:12.5px;font-weight:400;color:var(--muted);line-height:1.55;margin-bottom:10px;}
@@ -361,6 +362,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
     <button class="nav-btn active" onclick="filterFab(this,'')">Todos</button>
     <button class="nav-btn" onclick="filterFab(this,'Sudarshan')">Sudarshan</button>
     <button class="nav-btn" onclick="filterFab(this,'Lanxess')">Lanxess</button>
+    <button class="nav-btn" onclick="filterFab(this,'Clariquimica')" title="Linha Própria Clariquímica"><img src="data:image/png;base64,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" alt="Clariquímica" style="height:16px;vertical-align:middle;filter:brightness(0) invert(1);opacity:.8"></button>
   </nav>
 </header>
 
@@ -558,6 +560,42 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
     </div>
   </div>
   <div class="product-grid" id="grid-colortherm-green"></div>
+</section>
+
+<!-- SOLUTINT E -->
+<section class="line-section" data-fab="Sudarshan" data-apps="Esmaltes alquídicos,Tintas decorativas,Tintas imobiliárias" id="line-solutinte">
+  <div class="line-banner"><div class="line-accent" style="background:#C87820"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Solutint<sup>®</sup> E</div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
+      <div class="line-desc">Concentrado alquídico de pigmentos orgânicos e inorgânicos isentos de metais pesados, em resina alquídica de cadeia longa. Destinado principalmente a esmaltes alquídicos no segmento de tintas decorativas. Padronização por poder de tingimento.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Esmaltes alquídicos</span><span class="line-chip">Tintas decorativas</span><span class="line-chip">Tintas imobiliárias</span></div><span class="line-count" id="count-solutinte"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-solutinte"></div>
+</section>
+
+<!-- CLARITINT P -->
+<section class="line-section" data-fab="Clariquimica" data-apps="Tintas industriais,Tintas gráficas,Base solvente,Vernizes" id="line-claritintp">
+  <div class="line-banner"><div class="line-accent" style="background:#E8601C"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Claritint P<sup>®</sup></div><span class="line-badge badge-logo"><img src="data:image/png;base64,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" alt="Clariquímica" style="height:16px"></span></div>
+      <div class="line-desc">Concentrado universal de pigmentos orgânicos e inorgânicos isentos de metais pesados em resina de aldeído cetônica (xilol/acetato de butil glicol). Ampla compatibilidade com sistemas base solvente. Padronização por poder de tingimento.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas industriais</span><span class="line-chip">Tintas gráficas</span><span class="line-chip">Base solvente</span></div><span class="line-count" id="count-claritintp"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-claritintp"></div>
+</section>
+
+<!-- FLEXONYL -->
+<section class="line-section" data-fab="Sudarshan" data-apps="Tintas imobiliárias,Base água,Tinting,Construção" id="line-flexonyl">
+  <div class="line-banner"><div class="line-accent" style="background:#C84040"></div>
+    <div class="line-body">
+      <div class="line-body-top"><div class="line-name">Flexonyl<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
+      <div class="line-desc">Dispersão pigmentária aquosa isenta de APEO e etilenoglicol, com pequena quantidade de resina acrílica como estabilizador. Ampla compatibilidade e flexibilidade em emulsões aquosas para tintas imobiliárias e diversas aplicações.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Base água</span><span class="line-chip">Tinting</span></div><span class="line-count" id="count-flexonyl"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+    </div>
+  </div>
+  <div class="product-grid" id="grid-flexonyl"></div>
 </section>
 
 <div class="empty" id="emptyState">
@@ -955,6 +993,8 @@ const LINE_MAP = {
   colanyl100:{fab:"Sudarshan", label:"Colanyl® 100"},
   colanyl500:{fab:"Sudarshan", label:"Colanyl® 500"},
   hostatint: {fab:"Sudarshan", label:"Hostatint® 500"},
+  solutinte: {fab:"Sudarshan", label:"Solutint® E"},
+  flexonyl:  {fab:"Sudarshan", label:"Flexonyl®"},
 };
 
 // ── DADOS LANXESS ──────────────────────────────────────────────────────
@@ -1026,6 +1066,63 @@ var LINE_MAP_LANXESS = {
 
 
 
+// ── DADOS PRÓPRIOS CLARIQUÍMICA ────────────────────────────────────────
+var PRODUCTS_SUD_EXTRA = {
+  'solutinte': [
+    {nome:"Solutint E Amarelo 2GXD",   ci:"P.Y.74",  cor:"#E8C030",corte:"#F0D870",tom:"Amarelo",        luz:7, calor:6, solv:7, teor:"30%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint E Amarelo 3RD",    ci:"P.Y.65",  cor:"#D8B020",corte:"#E8D060",tom:"Amarelo Avermelhado",luz:7,calor:6,solv:7,teor:"30%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint E Amarelo Óxido GA",ci:"P.Y.42", cor:"#B88030",corte:"#D0A868",tom:"Amarelo Óxido",   luz:8, calor:8, solv:8, teor:"45%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas","Tintas imobiliárias"]},
+    {nome:"Solutint E Vermelho Óxido BR",ci:"P.R.101",cor:"#8A2020",corte:"#B86060",tom:"Vermelho Óxido",  luz:8, calor:8, solv:8, teor:"55%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas","Tintas imobiliárias"]},
+    {nome:"Solutint E Escarlate RNC",  ci:"P.R.03",  cor:"#D02828",corte:"#E87070",tom:"Vermelho Escarlate",luz:4,calor:4,solv:4,teor:"30%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint E Vermelho",       ci:"P.R.48:4",cor:"#C01830",corte:"#DF5870",tom:"Vermelho",         luz:5, calor:5, solv:5, teor:"25%",emb:"20 kg lata",apps:["Esmaltes alquídicos"]},
+    {nome:"Solutint E Alaranjado GG",  ci:"P.O.5",   cor:"#D84828",corte:"#E88868",tom:"Alaranjado",       luz:5, calor:5, solv:5, teor:"30%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint E Azul B2G",       ci:"P.B.15:3",cor:"#2255C0",corte:"#6688D8",tom:"Azul",             luz:8, calor:8, solv:8, teor:"16%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint E Azul AR",        ci:"P.B.15:1",cor:"#1840B0",corte:"#5070C8",tom:"Azul Avermelhado", luz:8, calor:8, solv:8, teor:"16%",emb:"20 kg lata",apps:["Esmaltes alquídicos"]},
+    {nome:"Solutint E Verde GG",       ci:"P.G.7",   cor:"#1A7040",corte:"#58A070",tom:"Verde",             luz:8, calor:8, solv:8, teor:"16%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint E Preto PR-31",    ci:"P.Bk.7",  cor:"#1A1A1A",corte:"#606060",tom:"Preto",             luz:8, calor:8, solv:8, teor:"15%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint E Violeta RL",     ci:"P.V.23",  cor:"#6A28AA",corte:"#A060D0",tom:"Violeta",           luz:8, calor:7, solv:7, teor:"10%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint E Branco T",       ci:"P.W.6",   cor:"#F0F0F0",corte:"#FAFAFA",tom:"Branco",            luz:8, calor:8, solv:8, teor:"60%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
+    {nome:"Solutint A Trans Amarelo Conc-MX",ci:"P.Y.42",cor:"#C09838",corte:"#D8B870",tom:"Amarelo Óxido Trans.",luz:8,calor:8,solv:8,teor:"45%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Madeira"]},
+    {nome:"Solutint A Trans Vermelho Conc-MX",ci:"P.R.101",cor:"#922018",corte:"#C06050",tom:"Vermelho Óxido Trans.",luz:8,calor:8,solv:8,teor:"55%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Madeira"]},
+  ],
+  'flexonyl': [
+    {nome:"Flexonyl Amarelo AG-BR",       ci:"P.Y.13",  cor:"#D8C030",corte:"#E8D870",tom:"Amarelo Diarílida",  luz:5, calor:5, solv:7, teor:"40%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
+    {nome:"Flexonyl Vermelho A-F2R-BR",   ci:"P.R.2",   cor:"#D02828",corte:"#E07070",tom:"Vermelho Naftol",    luz:6, calor:6, solv:7, teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
+    {nome:"Flexonyl Vermelho A-F5RK-BR",  ci:"P.R.179", cor:"#C01830",corte:"#DF5870",tom:"Vermelho Naftol Escuro",luz:6,calor:6,solv:7,teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
+    {nome:"Flexonyl Alaranjado A-G-BR",   ci:"P.O.13",  cor:"#D84828",corte:"#E88868",tom:"Laranja Diarílida",  luz:6, calor:6, solv:7, teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
+    {nome:"Flexonyl Rubi WF-571-BR",      ci:"P.R.57:1",cor:"#AA1050",corte:"#D05080",tom:"Rubi Laca Azo",      luz:6, calor:6, solv:7, teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
+    {nome:"Flexonyl Azul WF-150-BR",      ci:"P.B.15:0",cor:"#1840B0",corte:"#5070C8",tom:"Azul Ftalocianina α",luz:8, calor:8, solv:8, teor:"35%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
+    {nome:"Flexonyl Azul WF-153-BR",      ci:"P.B.15:3",cor:"#2255C0",corte:"#6688D8",tom:"Azul Ftalocianina β",luz:8, calor:8, solv:8, teor:"35%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
+    {nome:"Flexonyl Verde-A-GG-BR",       ci:"P.G.7",   cor:"#1A7040",corte:"#58A070",tom:"Verde Ftalocianina", luz:8, calor:8, solv:8, teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
+    {nome:"Flexonyl Preto WF-007",        ci:"P.Bk.7",  cor:"#1A1A1A",corte:"#606060",tom:"Negro de Fumo",      luz:8, calor:7, solv:8, teor:"40%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
+    {nome:"Flexonyl Violeta A-RL-BR",     ci:"P.V.23",  cor:"#6A28AA",corte:"#A060D0",tom:"Violeta Dioxazina",  luz:7, calor:7, solv:8, teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
+    {nome:"Flexonyl Havana K-BR",         ci:"MIX",     cor:"#7A4820",corte:"#B08060",tom:"Marrom (mistura)",   luz:7, calor:7, solv:8, teor:"60%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
+  ],
+};
+
+var PRODUCTS_CQ = {
+  'claritintp': [
+    {nome:"Claritint P Amarelo 2GXD", ci:"P.Y.74",  cor:"#E8C030",corte:"#F0D870",tom:"Amarelo",         luz:7, calor:6, solv:7, teor:"30%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas","Base solvente"]},
+    {nome:"Claritint P Amarelo HR",   ci:"P.Y.83",  cor:"#D0A828",corte:"#E4C870",tom:"Amarelo Azóico",  luz:8, calor:7, solv:7, teor:"15%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
+    {nome:"Claritint P Amarelo Óxido FE",ci:"P.Y.42",cor:"#B88030",corte:"#D0A868",tom:"Amarelo Óxido",  luz:8, calor:8, solv:8, teor:"45%",emb:"20 kg lata",apps:["Tintas industriais","Base solvente"]},
+    {nome:"Claritint P Vermelho Óxido BR",ci:"P.R.101",cor:"#8A2020",corte:"#B86060",tom:"Vermelho Óxido",luz:8,calor:8,solv:8,teor:"55%",emb:"20 kg lata",apps:["Tintas industriais","Base solvente"]},
+    {nome:"Claritint P Vermelho F5RK", ci:"P.R.170", cor:"#C82030",corte:"#E07070",tom:"Vermelho Toluidina",luz:7,calor:6,solv:6,teor:"25%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
+    {nome:"Claritint P Magenta E",     ci:"P.R.122", cor:"#C44080",corte:"#DF80B0",tom:"Magenta Quinacridona",luz:8,calor:7,solv:7,teor:"20%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
+    {nome:"Claritint P Azul B2G",      ci:"P.B.15:3",cor:"#2255C0",corte:"#6688D8",tom:"Azul Ftalocianina β",luz:8,calor:8,solv:8,teor:"15%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
+    {nome:"Claritint P Azul AR",       ci:"P.B.15:1",cor:"#1840B0",corte:"#5070C8",tom:"Azul Ftalocianina α",luz:8,calor:8,solv:8,teor:"15%",emb:"20 kg lata",apps:["Tintas industriais"]},
+    {nome:"Claritint P Verde 3GLS",    ci:"P.G.7",   cor:"#1A7040",corte:"#58A070",tom:"Verde Ftalocianina",luz:8,calor:8,solv:8,teor:"15%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
+    {nome:"Claritint P Preto PR",      ci:"P.Bk.7",  cor:"#1A1A1A",corte:"#606060",tom:"Negro de Fumo",    luz:8, calor:8, solv:8, teor:"15%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
+    {nome:"Claritint P Violeta RL",    ci:"P.V.23",  cor:"#6A28AA",corte:"#A060D0",tom:"Violeta Dioxazina", luz:8, calor:7, solv:7, teor:"10%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
+    {nome:"Claritint P Branco BT",     ci:"P.W.6",   cor:"#F0F0F0",corte:"#FAFAFA",tom:"Branco TiO2",       luz:8, calor:8, solv:8, teor:"60%",emb:"20 kg lata",apps:["Tintas industriais"]},
+  ],
+};
+
+var LINE_MAP_CQ = {
+  'claritintp': {fab:"Clariquimica", label:"Claritint P®"},
+};
+
+
+
 function makeBar(v, elId) {
   var el = document.getElementById(elId);
   if (!el) return;
@@ -1088,6 +1185,46 @@ function buildCards() {
       grid.appendChild(card);
     }
   }
+  // Sudarshan extras (Solutint E, Flexonyl)
+  var lkeysSE = Object.keys(PRODUCTS_SUD_EXTRA);
+  for (var kiSE = 0; kiSE < lkeysSE.length; kiSE++) {
+    var lkSE = lkeysSE[kiSE];
+    var prodsSE = PRODUCTS_SUD_EXTRA[lkSE];
+    var gridSE = document.getElementById('grid-' + lkSE);
+    if (!gridSE) continue;
+    var fabSE  = LINE_MAP[lkSE].fab;
+    var lblSE  = LINE_MAP[lkSE].label;
+    var cntSE  = document.getElementById('count-' + lkSE);
+    if (cntSE) cntSE.textContent = prodsSE.length + (prodsSE.length > 1 ? ' produtos' : ' produto');
+    for (var piSE = 0; piSE < prodsSE.length; piSE++) {
+      var pSE = prodsSE[piSE];
+      var cardSE = document.createElement('div');
+      cardSE.className = 'product-card';
+      cardSE.setAttribute('data-search', (pSE.nome + ' ' + pSE.ci).toLowerCase());
+      cardSE.setAttribute('data-apps', pSE.apps.join(','));
+      cardSE.setAttribute('data-fab', fabSE);
+      var tagsSE = '';
+      for (var aiSE = 0; aiSE < Math.min(pSE.apps.length, 2); aiSE++) {
+        tagsSE += '<span class="card-tag">' + pSE.apps[aiSE] + '</span>';
+      }
+      cardSE.innerHTML =
+        '<div class="swatch">' +
+          '<div class="swatch-full" style="background:' + pSE.cor + '"></div>' +
+          '<div class="swatch-cut" style="background:' + pSE.corte + '"></div>' +
+          '<div class="swatch-labels"><span class="swatch-tag">Tom pleno</span><span class="swatch-tag">Corte 1:9</span></div>' +
+        '</div>' +
+        '<div class="card-body">' +
+          '<div class="card-name">' + pSE.nome + '</div>' +
+          '<div class="card-ci">' + pSE.ci + '</div>' +
+          '<div class="card-tags">' + tagsSE + '</div>' +
+          '<div class="card-solidez"><span class="solidez-label">Solidez à luz</span>' + makeDots(pSE.luz) + '</div>' +
+        '</div>';
+      (function(lk_, idx_, f_, l_) {
+        cardSE.addEventListener('click', function() { openDetailSudExtra(lk_, idx_, f_, l_); });
+      })(lkSE, piSE, fabSE, lblSE);
+      gridSE.appendChild(cardSE);
+    }
+  }
   // Lanxess
   var lkeys2 = Object.keys(PRODUCTS_LANXESS);
   for (var ki2 = 0; ki2 < lkeys2.length; ki2++) {
@@ -1128,6 +1265,56 @@ function buildCards() {
       grid2.appendChild(card2);
     }
   }
+  // Clariquímica (linha própria)
+  var lkeys3 = Object.keys(PRODUCTS_CQ);
+  for (var ki3 = 0; ki3 < lkeys3.length; ki3++) {
+    var lk3 = lkeys3[ki3];
+    var prods3 = PRODUCTS_CQ[lk3];
+    var grid3 = document.getElementById('grid-' + lk3);
+    if (!grid3) continue;
+    var fab3  = LINE_MAP_CQ[lk3].fab;
+    var lbl3  = LINE_MAP_CQ[lk3].label;
+    var cnt3  = document.getElementById('count-' + lk3);
+    if (cnt3) cnt3.textContent = prods3.length + (prods3.length > 1 ? ' produtos' : ' produto');
+    for (var pi3 = 0; pi3 < prods3.length; pi3++) {
+      var p3 = prods3[pi3];
+      var card3 = document.createElement('div');
+      card3.className = 'product-card';
+      card3.setAttribute('data-search', (p3.nome + ' ' + p3.ci).toLowerCase());
+      card3.setAttribute('data-apps', p3.apps.join(','));
+      card3.setAttribute('data-fab', fab3);
+      var tags3 = '';
+      for (var ai3 = 0; ai3 < Math.min(p3.apps.length, 2); ai3++) {
+        tags3 += '<span class="card-tag">' + p3.apps[ai3] + '</span>';
+      }
+      card3.innerHTML =
+        '<div class="swatch">' +
+          '<div class="swatch-full" style="background:' + p3.cor + '"></div>' +
+          '<div class="swatch-cut" style="background:' + p3.corte + '"></div>' +
+          '<div class="swatch-labels"><span class="swatch-tag">Tom pleno</span><span class="swatch-tag">Corte 1:9</span></div>' +
+        '</div>' +
+        '<div class="card-body">' +
+          '<div class="card-name">' + p3.nome + '</div>' +
+          '<div class="card-ci">' + p3.ci + '</div>' +
+          '<div class="card-tags">' + tags3 + '</div>' +
+          '<div class="card-solidez"><span class="solidez-label">Solidez à luz</span>' + makeDots(p3.luz) + '</div>' +
+        '</div>';
+      (function(lk_, idx_, f_, l_) {
+        card3.addEventListener('click', function() { openDetailCQ(lk_, idx_, f_, l_); });
+      })(lk3, pi3, fab3, lbl3);
+      grid3.appendChild(card3);
+    }
+  }
+}
+
+function openDetailSudExtra(lk, i, fab, lbl) {
+  var p = PRODUCTS_SUD_EXTRA[lk][i];
+  _openDetailPanel(p, fab, lbl);
+}
+
+function openDetailCQ(lk, i, fab, lbl) {
+  var p = PRODUCTS_CQ[lk][i];
+  _openDetailPanel(p, fab, lbl);
 }
 
 function openDetailLanxess(lk, i, fab, lbl) {
