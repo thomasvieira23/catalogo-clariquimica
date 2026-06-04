@@ -286,8 +286,22 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
   .detail-handle{display:none;}
 }
 @media(max-width:559px){
-  /* No mobile: esconder parceiros do header, ficam só na capa */
-  .header-sep,.header-partners{display:none;}
+  /* No mobile: esconder parceiros e nav do header, ficam só na capa / pills */
+  .header-sep,.header-partners,.header-nav{display:none;}
+}
+/* Pills de filtro mobile — scroll horizontal */
+.fab-pills{
+  display:none;
+}
+@media(max-width:559px){
+  .fab-pills{
+    display:flex;gap:6px;overflow-x:auto;padding:8px 16px;
+    scrollbar-width:none;-ms-overflow-style:none;
+    border-bottom:1px solid var(--borda);
+    background:var(--escuro);
+  }
+  .fab-pills::-webkit-scrollbar{display:none;}
+  .fab-pills .nav-btn{flex-shrink:0;font-size:12px;padding:6px 14px;}
 }
 @media print{
   .site-header,.toolbar,#overlay{display:none!important;}
@@ -366,6 +380,14 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
     
   </nav>
 </header>
+
+<!-- ════ FILTRO MOBILE (pills scroll horizontal) ════ -->
+<div class="fab-pills">
+  <button class="nav-btn active" onclick="filterFabAll(this)">Todos</button>
+  <button class="nav-btn" onclick="filterFabAll(this,'Sudarshan')">Sudarshan</button>
+  <button class="nav-btn" onclick="filterFabAll(this,'Lanxess')">Lanxess</button>
+  <button class="nav-btn" onclick="filterFabAll(this,'Clariquimica')">Clariquímica</button>
+</div>
 
 <!-- ════ TOOLBAR ═════════════════════════════════ -->
 <div class="toolbar">
@@ -1385,10 +1407,23 @@ function closeDetail() {
 }
 
 var activeFab = '';
+function filterFabAll(btn, fab) {
+  // Sincroniza pills mobile + nav desktop
+  filterFab(btn, fab || '');
+}
+
 function filterFab(btn, fab) {
-  activeFab = fab;
+  activeFab = fab || '';
   var btns = document.querySelectorAll('.nav-btn');
   for (var i = 0; i < btns.length; i++) btns[i].classList.remove('active');
+  // Ativar o botão clicado e o equivalente no outro container
+  var allBtns = document.querySelectorAll('.header-nav .nav-btn, .fab-pills .nav-btn');
+  for (var j = 0; j < allBtns.length; j++) {
+    var b = allBtns[j];
+    var bFab = b.getAttribute('onclick') || '';
+    var matches = (fab === '' && bFab.includes("''")) || (fab && bFab.includes("'" + fab + "'"));
+    if (matches) b.classList.add('active');
+  }
   btn.classList.add('active');
   doSearch();
 }
