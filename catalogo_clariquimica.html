@@ -312,9 +312,9 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 /* ══ TABELA DE PRODUTOS (piloto: Colanyl) ══════════════════ */
 .line-panel{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1),padding .25s;background:var(--surface);border:1px solid var(--borda);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);padding:0 12px;}
 .line-section.open .line-panel{max-height:9000px;padding:12px;}
-.prod-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--borda);border-radius:var(--r-lg);}
+.prod-table-wrap{overflow:auto;max-height:68vh;-webkit-overflow-scrolling:touch;border:1px solid var(--borda);border-radius:var(--r-lg);}
 .prod-table{border-collapse:collapse;width:100%;min-width:780px;font-size:12.5px;background:var(--surface);}
-.prod-table thead th{position:sticky;top:0;background:var(--escuro);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:9px 8px;text-align:center;vertical-align:middle;line-height:1.22;white-space:nowrap;}
+.prod-table thead th{position:sticky;top:0;z-index:3;background:var(--escuro);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:9px 8px;text-align:center;vertical-align:middle;line-height:1.22;white-space:nowrap;}
 .prod-table thead th.th-w{white-space:normal;}
 .prod-table thead th.th-cor,.prod-table thead th.th-num,.prod-table thead th.th-app{text-align:center;}
 .prod-table thead th.th-cor{white-space:normal;width:92px;}
