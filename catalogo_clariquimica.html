@@ -664,15 +664,22 @@ tr.product-card.hidden{display:none;}
 </section>
 
 <!-- CLARITINT P -->
-<section class="line-section" data-fab="Clariquimica" data-apps="Tintas industriais,Tintas gráficas,Base solvente,Vernizes" id="line-claritintp">
+<section class="line-section" data-fab="Clariquimica" data-apps="Tintas industriais,Tintas decorativas,Acabamento de madeira,Acabamento de couro,Base solvente" id="line-claritintp">
   <div class="line-banner"><div class="line-accent" style="background:#E8601C"></div>
     <div class="line-body">
       <div class="line-body-top"><div class="line-name">Claritint P<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-clariquimica.svg" alt="Clariquímica" style="height:16px"></span></div>
-      <div class="line-desc">Concentrado universal de pigmentos orgânicos e inorgânicos isentos de metais pesados em resina de aldeído cetônica (xilol/acetato de butil glicol). Ampla compatibilidade com sistemas base solvente. Padronização por poder de tingimento.</div>
-      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas industriais</span><span class="line-chip">Tintas gráficas</span><span class="line-chip">Base solvente</span></div><span class="line-count" id="count-claritintp"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+      <div class="line-desc">Dispersões de pigmentos orgânicos e inorgânicos, isentas de metais pesados, em resina de ampla compatibilidade com sistemas base solvente — para tintas industriais. Altamente concentradas; o controle é feito pelo poder de tingimento, não pelo teor de pigmento.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Base solvente</span><span class="line-chip">Tintas industriais</span><span class="line-chip">Sem metais pesados</span></div><span class="line-count" id="count-claritintp"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
     </div>
   </div>
-  <div class="product-grid" id="grid-claritintp"></div>
+  <div class="line-panel">
+    <div class="prod-table-wrap">
+      <table class="prod-table" id="table-claritintp">
+        <thead id="thead-claritintp"></thead>
+        <tbody id="tbody-claritintp"></tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <!-- FLEXONYL -->
@@ -1146,26 +1153,9 @@ var PRODUCTS_SUD_EXTRA = {
   ],
 };
 
-var PRODUCTS_CQ = {
-  'claritintp': [
-    {nome:"Claritint P Amarelo 2GXD", ci:"P.Y.74",  cor:"#E8C030",corte:"#F0D870",tom:"Amarelo",         luz:7, calor:6, solv:7, teor:"30%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas","Base solvente"]},
-    {nome:"Claritint P Amarelo HR",   ci:"P.Y.83",  cor:"#D0A828",corte:"#E4C870",tom:"Amarelo Azóico",  luz:8, calor:7, solv:7, teor:"15%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
-    {nome:"Claritint P Amarelo Óxido FE",ci:"P.Y.42",cor:"#B88030",corte:"#D0A868",tom:"Amarelo Óxido",  luz:8, calor:8, solv:8, teor:"45%",emb:"20 kg lata",apps:["Tintas industriais","Base solvente"]},
-    {nome:"Claritint P Vermelho Óxido BR",ci:"P.R.101",cor:"#8A2020",corte:"#B86060",tom:"Vermelho Óxido",luz:8,calor:8,solv:8,teor:"55%",emb:"20 kg lata",apps:["Tintas industriais","Base solvente"]},
-    {nome:"Claritint P Vermelho F5RK", ci:"P.R.170", cor:"#C82030",corte:"#E07070",tom:"Vermelho Toluidina",luz:7,calor:6,solv:6,teor:"25%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
-    {nome:"Claritint P Magenta E",     ci:"P.R.122", cor:"#C44080",corte:"#DF80B0",tom:"Magenta Quinacridona",luz:8,calor:7,solv:7,teor:"20%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
-    {nome:"Claritint P Azul B2G",      ci:"P.B.15:3",cor:"#2255C0",corte:"#6688D8",tom:"Azul Ftalocianina β",luz:8,calor:8,solv:8,teor:"15%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
-    {nome:"Claritint P Azul AR",       ci:"P.B.15:1",cor:"#1840B0",corte:"#5070C8",tom:"Azul Ftalocianina α",luz:8,calor:8,solv:8,teor:"15%",emb:"20 kg lata",apps:["Tintas industriais"]},
-    {nome:"Claritint P Verde 3GLS",    ci:"P.G.7",   cor:"#1A7040",corte:"#58A070",tom:"Verde Ftalocianina",luz:8,calor:8,solv:8,teor:"15%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
-    {nome:"Claritint P Preto PR",      ci:"P.Bk.7",  cor:"#1A1A1A",corte:"#606060",tom:"Negro de Fumo",    luz:8, calor:8, solv:8, teor:"15%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
-    {nome:"Claritint P Violeta RL",    ci:"P.V.23",  cor:"#6A28AA",corte:"#A060D0",tom:"Violeta Dioxazina", luz:8, calor:7, solv:7, teor:"10%",emb:"20 kg lata",apps:["Tintas industriais","Tintas gráficas"]},
-    {nome:"Claritint P Branco BT",     ci:"P.W.6",   cor:"#F0F0F0",corte:"#FAFAFA",tom:"Branco TiO2",       luz:8, calor:8, solv:8, teor:"60%",emb:"20 kg lata",apps:["Tintas industriais"]},
-  ],
-};
+var PRODUCTS_CQ = {};
 
-var LINE_MAP_CQ = {
-  'claritintp': {fab:"Clariquimica", label:"Claritint P®"},
-};
+var LINE_MAP_CQ = {};
 
 var COLANYL = [
   {nome:"Colanyl Amarelo 10 G",ci:"P.Y. 3",ciFull:"Pigment Yellow 3",luz:"7",intemp:"4-5",teor:"50%",classe:"Azo",dens:"1,28",imob:true,ind:true,esp:true,cor:"#F2DE00",corte:"#FBF1A6"},
@@ -1246,6 +1236,115 @@ function openDetailColanyl(i){
 }
 
 
+
+
+
+var CLARITINT = [
+  {nome:"Claritint Amarelo P 2GXD",ci:"P.Y. 74",ciFull:"Pigment Yellow 74",cor:"#E8C030",corte:"#F0D870",luz:"7",teor:"30%",classe:"Azo",dens:"1,06",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Amarelo P HR",ci:"P.Y. 83",ciFull:"Pigment Yellow 83",cor:"#D0A828",corte:"#E4C870",luz:"6",teor:"15%",classe:"Diazo",dens:"1,09",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Amarelo Óxido P FE",ci:"P.Y. 42",ciFull:"Pigment Yellow 42",cor:"#B88030",corte:"#D0A868",luz:"8",teor:"45%",classe:"Hidróxido de Ferro",dens:"1,65",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Alaranjado P HL",ci:"P.O. 36",ciFull:"Pigment Orange 36",cor:"#E8631A",corte:"#F4A878",luz:"7-8",teor:"25%",classe:"Benzimidazolona",dens:"1,16",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Vermelho P D3G",ci:"P.R. 254",ciFull:"Pigment Red 254",cor:"#D52218",corte:"#ED8A7E",luz:"8",teor:"25%",classe:"Dicetopirrolopirrol",dens:"1,10",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Vermelho P F5RK",ci:"P.R. 170",ciFull:"Pigment Red 170",cor:"#C82030",corte:"#E07070",luz:"7",teor:"25%",classe:"Naftol AS",dens:"1,10",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Vermelho Óxido P BR",ci:"P.R. 101",ciFull:"Pigment Red 101",cor:"#8A2020",corte:"#B86060",luz:"8",teor:"55%",classe:"Óxido de Ferro",dens:"2,12",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Rosa P E",ci:"P.R. 122",ciFull:"Pigment Red 122",cor:"#C44080",corte:"#DF80B0",luz:"8",teor:"20%",classe:"Quinacridona",dens:"1,05",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Azul P AR",ci:"P.B. 15:1",ciFull:"Pigment Blue 15:1",cor:"#1840B0",corte:"#5070C8",luz:"8",teor:"15%",classe:"Ftalocianina",dens:"1,04",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Azul P B2G",ci:"P.B. 15:3",ciFull:"Pigment Blue 15:3",cor:"#2255C0",corte:"#6688D8",luz:"8",teor:"17%",classe:"Ftalocianina",dens:"1,03",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Violeta P RL",ci:"P.V. 23",ciFull:"Pigment Violet 23",cor:"#6A28AA",corte:"#A060D0",luz:"7-8",teor:"10%",classe:"Dioxazina",dens:"1,02",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Violeta P ER",ci:"P.V. 19",ciFull:"Pigment Violet 19",cor:"#9B2D6B",corte:"#C883AC",luz:"7-8",teor:"10%",classe:"Quinacridona",dens:"1,05",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Verde P 3GLS",ci:"P.G. 7",ciFull:"Pigment Green 7",cor:"#1A7040",corte:"#58A070",luz:"8",teor:"15%",classe:"Ftalocianina",dens:"1,07",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Preto P PR",ci:"P.Bk. 7",ciFull:"Pigment Black 7",cor:"#1A1A1A",corte:"#606060",luz:"8",teor:"15%",classe:"Carbon Black",dens:"1,10",ind:true,dec:true,mad:true,cou:true},
+  {nome:"Claritint Branco P BT",ci:"P.W. 6",ciFull:"Pigment White 6",cor:"#F0F0F0",corte:"#FAFAFA",luz:"8",teor:"60%",classe:"Dióxido de Titânio",dens:"1,83",ind:true,dec:true,mad:true,cou:true}
+];
+var CLARITINT_CFG = {
+  key:'claritintp', fab:'Clariquimica', data:CLARITINT,
+  columns:[
+    {kind:'name',field:'nome',label:'Produto'},
+    {kind:'ci',field:'ci',label:'C.I.'},
+    {kind:'swatch',label:'Tom Pleno / Corte'},
+    {kind:'num',field:'luz',label:'Solidez à Luz',bar:8},
+    {kind:'num',field:'teor',label:'Teor de Pigmento'},
+    {kind:'classe',field:'classe',label:'Classe Química'},
+    {kind:'num',field:'dens',label:'Densidade',unit:'g/cm\u00b3'},
+    {kind:'app',field:'ind',label:'Tintas Industriais',app:'Tintas industriais'},
+    {kind:'app',field:'dec',label:'Tintas Decorativas',app:'Tintas decorativas'},
+    {kind:'app',field:'mad',label:'Acabamento de Madeira',app:'Acabamento de madeira'},
+    {kind:'app',field:'cou',label:'Acabamento de Couro',app:'Acabamento de couro'}
+  ]
+};
+
+// ── Renderizador genérico de tabela por linha (reutilizável) ──
+var SPEC_CFG = {};
+function specHeadClass(col){
+  if(col.kind==='swatch')return 'th-cor';
+  if(col.kind==='name')return 'th-prod';
+  if(col.kind==='ci')return 'th-ci';
+  if(col.kind==='classe')return 'th-w th-classe';
+  if(col.kind==='app')return 'th-w th-app';
+  return 'th-w th-num';
+}
+function specCell(p,col){
+  if(col.kind==='swatch')
+    return '<td class="tc-swatch"><span class="mini-swatch"><span style="background:'+p.cor+'"></span><span style="background:'+p.corte+'"></span></span></td>';
+  if(col.kind==='name')  return '<td class="tc-name">'+p[col.field]+'</td>';
+  if(col.kind==='ci')    return '<td class="tc-ci">'+p[col.field]+'</td>';
+  if(col.kind==='classe')return '<td class="tc-classe" data-label="'+col.label+'">'+p[col.field]+'</td>';
+  if(col.kind==='app')   return '<td class="tc-app" data-label="'+col.label+'">'+colCheck(p[col.field])+'</td>';
+  return '<td class="tc-c" data-label="'+col.label+'">'+p[col.field]+'</td>';
+}
+function cfgApps(cfg,p){
+  var a=[];
+  for(var c=0;c<cfg.columns.length;c++){var col=cfg.columns[c];if(col.kind==='app'&&p[col.field])a.push(col.app||col.label);}
+  return a.join(',');
+}
+function buildSpecTable(cfg){
+  SPEC_CFG[cfg.key]=cfg;
+  var tb=document.getElementById('tbody-'+cfg.key);
+  if(!tb)return;
+  var thead=document.getElementById('thead-'+cfg.key);
+  if(thead){var h='<tr>';for(var c=0;c<cfg.columns.length;c++){h+='<th class="'+specHeadClass(cfg.columns[c])+'">'+cfg.columns[c].label+'</th>';}thead.innerHTML=h+'</tr>';}
+  var html='';
+  for(var i=0;i<cfg.data.length;i++){
+    var p=cfg.data[i];
+    var search=(p.nome+' '+p.ci+' '+(p.classe||'')).toLowerCase();
+    html+='<tr class="product-card prow" data-search="'+search+'" data-apps="'+cfgApps(cfg,p)+'" data-fab="'+cfg.fab+'">';
+    for(var c2=0;c2<cfg.columns.length;c2++){html+=specCell(p,cfg.columns[c2]);}
+    html+='</tr>';
+  }
+  tb.innerHTML=html;
+  var rws=tb.querySelectorAll('tr.prow');
+  for(var r=0;r<rws.length;r++){(function(k,idx){rws[r].addEventListener('click',function(){openSpecDetail(k,idx);});})(cfg.key,r);}
+  var cnt=document.getElementById('count-'+cfg.key);
+  if(cnt)cnt.textContent=cfg.data.length+' produtos';
+}
+function openSpecDetail(key,i){
+  var cfg=SPEC_CFG[key]; var p=cfg.data[i];
+  document.getElementById('dSwatchFull').style.background=p.cor;
+  document.getElementById('dSwatchCut').style.background=p.corte;
+  document.getElementById('dName').textContent=p.nome;
+  var b=document.getElementById('dBadge');
+  if(cfg.fab==='Sudarshan'){b.innerHTML='<img src="assets/logo-sudarshan.png" alt="Sudarshan">';b.className='detail-fab-badge badge-logo';}
+  else if(cfg.fab==='Lanxess'){b.innerHTML='<img src="assets/logo-lanxess.png" alt="Lanxess">';b.className='detail-fab-badge badge-logo';}
+  else if(cfg.fab==='Clariquimica'){b.innerHTML='<img src="assets/logo-clariquimica.svg" alt="Clariquímica" style="height:15px">';b.className='detail-fab-badge badge-logo';}
+  else {b.textContent=cfg.fab;b.className='line-badge badge-l';}
+  document.getElementById('dCi').textContent=p.ci;
+  var sh='<div class="spec-item"><div class="spec-label">Color Index</div><div class="spec-value">'+(p.ciFull||p.ci)+'</div></div>';
+  for(var c=0;c<cfg.columns.length;c++){
+    var col=cfg.columns[c];
+    if(col.kind==='name'||col.kind==='ci'||col.kind==='swatch'||col.kind==='app')continue;
+    if(col.bar){
+      sh+='<div class="spec-item"><div class="spec-label">'+col.label+'</div><div class="spec-solidez"><span class="spec-solidez-num">'+p[col.field]+'</span><span class="spec-solidez-max">/'+col.bar+'</span><div class="solidez-bar" id="dBar_'+col.field+'"></div></div></div>';
+    } else {
+      sh+='<div class="spec-item"><div class="spec-label">'+col.label+'</div><div class="spec-value">'+p[col.field]+(col.unit?(' '+col.unit):'')+'</div></div>';
+    }
+  }
+  document.querySelector('#detailPanel .detail-specs').innerHTML=sh;
+  for(var c2=0;c2<cfg.columns.length;c2++){var col2=cfg.columns[c2];if(col2.bar){if(col2.bar===5)makeBar5(maxNum(p[col2.field]),'dBar_'+col2.field);else makeBar(maxNum(p[col2.field]),'dBar_'+col2.field);}}
+  var appsEl=document.getElementById('dApps');appsEl.innerHTML='';
+  for(var c3=0;c3<cfg.columns.length;c3++){var col3=cfg.columns[c3];if(col3.kind==='app'&&p[col3.field]){var chip=document.createElement('span');chip.className='detail-app';chip.textContent=(col3.app||col3.label);appsEl.appendChild(chip);}}
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
 
 
 var LEGACY_SPECS_HTML='';
@@ -1571,6 +1670,7 @@ document.addEventListener('DOMContentLoaded', function() {
   buildCards();
   LEGACY_SPECS_HTML = document.querySelector('#detailPanel .detail-specs').innerHTML;
   buildColanylTable();
+  buildSpecTable(CLARITINT_CFG);
   doSearch();
   // Fechar overlay
   document.getElementById('overlay').addEventListener('click', function(e) {
