@@ -531,7 +531,7 @@ tr.product-card.hidden{display:none;}
   <div class="line-banner"><div class="line-accent" style="background:#0094DA"></div>
     <div class="line-body">
       <div class="line-body-top"><div class="line-name">Colanyl<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
-      <div class="line-desc">Preparações de pigmentos orgânicos e inorgânicos, isentas de APEO, etilenoglicol e resina, para coloração de tintas de emulsão aquosa — imobiliárias, industriais e especialidades.</div>
+      <div class="line-desc">Preparações de pigmentos orgânicos e inorgânicos para tintas de emulsão aquosa, isentas de APEO, etilenoglicol e resina — o que garante ampla compatibilidade. A padronização é feita pelo poder de tingimento, não pelo teor de pigmento.</div>
       <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Tintas industriais</span><span class="line-chip">Especialidades</span></div><span class="line-count" id="count-colanyl"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
     </div>
   </div>
@@ -554,7 +554,6 @@ tr.product-card.hidden{display:none;}
         <tbody id="tbody-colanyl"></tbody>
       </table>
     </div>
-    <div class="line-summary" id="summary-colanyl"></div>
   </div>
 </section>
 
@@ -1171,7 +1170,6 @@ var COLANYL = [
   {nome:"Colanyl Branco TQ",ci:"P.W. 6",ciFull:"Pigment White 6",luz:"8",intemp:"5",teor:"70%",classe:"Dióxido de Titânio",dens:"1,76",imob:true,ind:true,esp:true,cor:"#F4F4F2",corte:"#FAFAF9"}
 ];
 
-var COLANYL_SUMMARY = "São preparações de pigmentos orgânicos e inorgânicos, isentas de APEO e etilenoglicol, destinadas à coloração de tintas de emulsão aquosa dos mais diversos tipos para o setor de tintas imobiliárias e para várias outras aplicações em meios aquosos. Estas preparações são isentas de qualquer tipo de resina, permitindo assim uma ampla gama de compatibilidade. Os níveis de solidez que as mesmas apresentam são determinados pelo tipo químico do pigmento base e sua padronização é efetuada pelo poder de tingimento da preparação, e não pelo conteúdo de pigmento.";
 
 function colApps(p){var a=[];if(p.imob)a.push('Tintas imobiliárias');if(p.ind)a.push('Tintas industriais');if(p.esp)a.push('Especialidades');return a.join(',');}
 function colCheck(b){return b?'<span class="tcheck on">\u2713</span>':'<span class="tcheck off">\u2014</span>';}
@@ -1203,8 +1201,6 @@ function buildColanylTable(){
   for(var r=0;r<rws.length;r++){(function(idx){rws[r].addEventListener('click',function(){openDetailColanyl(idx);});})(r);}
   var cnt=document.getElementById('count-colanyl');
   if(cnt)cnt.textContent=COLANYL.length+' produtos';
-  var sm=document.getElementById('summary-colanyl');
-  if(sm)sm.innerHTML='<div class="summary-title">Sobre a linha Colanyl\u00ae</div><p>'+COLANYL_SUMMARY+'</p>';
 }
 
 function openDetailColanyl(i){
