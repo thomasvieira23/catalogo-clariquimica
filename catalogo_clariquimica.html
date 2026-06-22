@@ -308,6 +308,49 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
   body{background:white;}.main{padding:20px;}
   .product-grid{grid-template-columns:repeat(4,1fr);gap:8px;}
 }
+
+/* ══ TABELA DE PRODUTOS (piloto: Colanyl) ══════════════════ */
+.line-panel{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1),padding .25s;background:var(--surface);border:1px solid var(--borda);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);padding:0 12px;}
+.line-section.open .line-panel{max-height:9000px;padding:12px;}
+.prod-table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--borda);border-radius:var(--r-lg);}
+.prod-table{border-collapse:collapse;width:100%;min-width:780px;font-size:12.5px;background:var(--surface);}
+.prod-table thead th{position:sticky;top:0;background:var(--escuro);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:9px 8px;text-align:center;vertical-align:middle;line-height:1.22;white-space:nowrap;}
+.prod-table thead th.th-w{white-space:normal;}
+.prod-table thead th.th-cor,.prod-table thead th.th-num,.prod-table thead th.th-app{text-align:center;}
+.prod-table thead th.th-cor{white-space:normal;width:92px;}
+.prod-table thead th.th-ci{width:60px;}
+.prod-table thead th.th-num{width:62px;}
+.prod-table thead th.th-classe{width:108px;}
+.prod-table thead th.th-app{width:74px;}
+tr.product-card.prow{display:table-row;background:transparent;border:none;border-radius:0;box-shadow:none;overflow:visible;cursor:pointer;transition:background .12s;-webkit-tap-highlight-color:transparent;}
+tr.prow:nth-child(even){background:#FBFAF8;}
+tr.prow:hover{background:#F0F6FC;}
+tr.prow:active{background:#E6F0FA;}
+tr.product-card.hidden{display:none;}
+.prod-table td{padding:8px 10px;border-bottom:1px solid var(--borda);vertical-align:middle;white-space:nowrap;}
+.prod-table tbody tr:last-child td{border-bottom:none;}
+.tc-name{font-weight:700;color:var(--escuro);white-space:normal;min-width:152px;line-height:1.3;}
+.tc-ci{color:var(--cinza);font-style:italic;font-size:11.5px;}
+.tc-c{text-align:center;font-weight:600;color:#444;}
+.tc-classe{font-size:11.5px;color:var(--muted);white-space:normal;}
+.tc-app{text-align:center;}
+.tcheck{font-weight:800;font-size:13px;line-height:1;}
+.tcheck.on{color:#16A34A;}
+.tcheck.off{color:#CBD2D9;}
+.tc-swatch{width:92px;text-align:center;}
+.mini-swatch{display:inline-flex;width:74px;height:38px;border-radius:6px;overflow:hidden;border:1px solid rgba(0,0,0,.12);box-shadow:0 1px 2px rgba(0,0,0,.08);}
+.mini-swatch span{display:block;height:100%;}
+.mini-swatch span:first-child{flex:3;}
+.mini-swatch span:last-child{flex:2;}
+.line-summary{margin-top:14px;padding:13px 16px;background:var(--bg);border:1px solid var(--borda);border-left:3px solid #0094DA;border-radius:var(--r-md);}
+.line-summary .summary-title{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--escuro);margin-bottom:6px;}
+.line-summary p{font-size:12.5px;line-height:1.6;color:var(--muted);margin:0;}
+@media(max-width:559px){
+  .prod-table{min-width:680px;font-size:12px;}
+  .prod-table thead th{padding:8px 8px;}
+  .prod-table td{padding:7px 8px;}
+  .tc-name{min-width:130px;}
+}
 </style>
 </head>
 <body>
@@ -355,7 +398,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
       <div class="cover-index">
         <div class="cover-index-item"><span class="cover-index-dot" style="background:#F78222"></span>Hostaperm · Novoperm · Permanent · Hansa</div>
         <div class="cover-index-item"><span class="cover-index-dot" style="background:#4DA493"></span>PV Sólido · Graphtol</div>
-        <div class="cover-index-item"><span class="cover-index-dot" style="background:#0094DA"></span>Colanyl 100 · Colanyl 500 · Hostatint 500</div>
+        <div class="cover-index-item"><span class="cover-index-dot" style="background:#0094DA"></span>Colanyl® · Hostatint 500</div>
       </div>
     </div>
   </div>
@@ -401,6 +444,7 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
       <option>Tintas imobiliárias</option><option>Tintas industriais</option>
       <option>Tintas gráficas</option><option>Plásticos</option>
       <option>Couro</option><option>Papel</option><option>Campos especiais</option>
+      <option>Especialidades</option>
     </select>
     <span class="results-pill" id="resultsPill"></span>
   </div>
@@ -482,28 +526,36 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
   <div class="product-grid" id="grid-graphtol"></div>
 </section>
 
-<!-- COLANYL 100 -->
-<section class="line-section" data-fab="Sudarshan" data-apps="Tintas imobiliárias,Tintas gráficas,Papel,Couro,Flexografia" id="line-colanyl100">
-  <div class="line-banner"><div class="line-accent" style="background:#20A870"></div>
+<!-- COLANYL -->
+<section class="line-section" data-fab="Sudarshan" data-apps="Tintas imobiliárias,Tintas industriais,Especialidades" id="line-colanyl">
+  <div class="line-banner"><div class="line-accent" style="background:#0094DA"></div>
     <div class="line-body">
-      <div class="line-body-top"><div class="line-name">Colanyl<sup>®</sup> 100</div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
-      <div class="line-desc">Dispersões aquosas de pigmentos sem ligante e sem APEO. Compatíveis com tintas base água de baixo VOC: PVA, acrílico, textura, esmalte aquoso e flexografia. Misturáveis entre si.</div>
-      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Flexografia</span><span class="line-chip">Couro</span><span class="line-chip">Papel</span></div><span class="line-count" id="count-colanyl100"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+      <div class="line-body-top"><div class="line-name">Colanyl<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
+      <div class="line-desc">Preparações de pigmentos orgânicos e inorgânicos, isentas de APEO, etilenoglicol e resina, para coloração de tintas de emulsão aquosa — imobiliárias, industriais e especialidades.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Tintas industriais</span><span class="line-chip">Especialidades</span></div><span class="line-count" id="count-colanyl"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
     </div>
   </div>
-  <div class="product-grid" id="grid-colanyl100"></div>
-</section>
-
-<!-- COLANYL 500 -->
-<section class="line-section" data-fab="Sudarshan" data-apps="Tintas imobiliárias,Dosagem automática" id="line-colanyl500">
-  <div class="line-banner"><div class="line-accent" style="background:#10906A"></div>
-    <div class="line-body">
-      <div class="line-body-top"><div class="line-name">Colanyl<sup>®</sup> 500</div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
-      <div class="line-desc">Dispersões aquosas sem ligante e sem APEO de alta força tintorial. Excelente compatibilidade com tintas decorativas de nova geração, formuladas para dosagem automática e baixo VOC.</div>
-      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Dosagem automática</span><span class="line-chip">Baixo VOC</span></div><span class="line-count" id="count-colanyl500"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+  <div class="line-panel">
+    <div class="prod-table-wrap">
+      <table class="prod-table" id="table-colanyl">
+        <thead><tr>
+          <th class="th-prod">Produto</th>
+          <th class="th-ci">C.I.</th>
+          <th class="th-cor">Tom Pleno / Corte</th>
+          <th class="th-w th-num">Solidez à Luz</th>
+          <th class="th-w th-num">Solidez à Intempéries</th>
+          <th class="th-w th-num">Teor de Pigmento</th>
+          <th class="th-w th-classe">Classe Química</th>
+          <th class="th-w th-num">Densidade</th>
+          <th class="th-w th-app">Tintas Imobiliárias</th>
+          <th class="th-w th-app">Tintas Industriais</th>
+          <th class="th-w th-app">Especialidades</th>
+        </tr></thead>
+        <tbody id="tbody-colanyl"></tbody>
+      </table>
     </div>
+    <div class="line-summary" id="summary-colanyl"></div>
   </div>
-  <div class="product-grid" id="grid-colanyl500"></div>
 </section>
 
 <!-- HOSTATINT 500 -->
@@ -941,47 +993,6 @@ const PRODUCTS = {
     {nome:"Graphtol Carmim HF4C",    ci:"Pigment Red 185",    cor:"#C02848",corte:"#E07888",luz:6,calor:5,solv:5,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Papel"]},
     {nome:"Graphtol Azul AN",        ci:"Pigment Blue 15",    cor:"#1840B0",corte:"#80A0E0",luz:6,calor:5,solv:5,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
   ],
-  colanyl100: [
-    {nome:"Colanyl Amarelo 10G 131",         ci:"Pigment Yellow 3",   cor:"#F0E010",corte:"#F8F080",luz:5,calor:4,solv:4,teor:"48%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro","Papel"]},
-    {nome:"Colanyl Amarelo 5GX 130",         ci:"Pigment Yellow 74",  cor:"#E8D000",corte:"#F4EC78",luz:6,calor:5,solv:5,teor:"46%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Flexografia","Couro"]},
-    {nome:"Colanyl Amarelo H3G 130",         ci:"Pigment Yellow 154", cor:"#D8B800",corte:"#ECCB70",luz:7,calor:6,solv:6,teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro"]},
-    {nome:"Colanyl Amarelo HR 130",          ci:"Pigment Yellow 83",  cor:"#D0A000",corte:"#ECC060",luz:6,calor:5,solv:5,teor:"35%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro"]},
-    {nome:"Colanyl Laranja Vermelho GG 131", ci:"Pigment Orange 5",   cor:"#E04818",corte:"#F09870",luz:5,calor:4,solv:4,teor:"45%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro"]},
-    {nome:"Colanyl Escarlate GO 130",        ci:"Pigment Red 168",    cor:"#E02800",corte:"#F09070",luz:7,calor:6,solv:6,teor:"35%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro"]},
-    {nome:"Colanyl Vermelho FGR 131",        ci:"Pigment Red 112",    cor:"#D02000",corte:"#EC8060",luz:6,calor:5,solv:5,teor:"45%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Flexografia","Couro"]},
-    {nome:"Colanyl Vermelho E3B 130",        ci:"Pigment Violet 19",  cor:"#B81830",corte:"#E07080",luz:7,calor:6,solv:6,teor:"32%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro"]},
-    {nome:"Colanyl Rosa E 100",              ci:"Pigment Red 122",    cor:"#D02860",corte:"#EC90B0",luz:7,calor:6,solv:6,teor:"20%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro"]},
-    {nome:"Colanyl Violeta RL 131",          ci:"Pigment Violet 23",  cor:"#6030A0",corte:"#B888D0",luz:7,calor:6,solv:6,teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro"]},
-    {nome:"Colanyl Azul A2R 131",            ci:"Pigment Blue 15:1",  cor:"#2050B0",corte:"#88A8E0",luz:7,calor:6,solv:6,teor:"40%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro","Papel"]},
-    {nome:"Colanyl Azul B2G 131",            ci:"Pigment Blue 15:3",  cor:"#1838C0",corte:"#80A8E8",luz:8,calor:7,solv:7,teor:"47%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Flexografia","Couro","Papel"]},
-    {nome:"Colanyl Verde GG 131",            ci:"Pigment Green 7",    cor:"#187028",corte:"#78B078",luz:8,calor:7,solv:7,teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Couro"]},
-    {nome:"Colanyl Preto N 131",             ci:"Pigment Black 7",    cor:"#1A1A1A",corte:"#707070",luz:8,calor:7,solv:7,teor:"42%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Flexografia","Couro","Papel"]},
-    {nome:"Colanyl Amarelo Óxido BV 100",    ci:"Pigment Yellow 184", cor:"#C8B000",corte:"#E4D060",luz:8,calor:8,solv:8,teor:"65%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
-    {nome:"Colanyl Amarelo Óxido R 132",     ci:"Pigment Yellow 42",  cor:"#B89020",corte:"#D8B860",luz:8,calor:8,solv:8,teor:"66%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tintas industriais"]},
-    {nome:"Colanyl Vermelho Óxido G 100",    ci:"Pigment Red 101",    cor:"#A82010",corte:"#D07060",luz:8,calor:8,solv:8,teor:"65%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tintas industriais"]},
-    {nome:"Colanyl Vermelho Óxido B 130",    ci:"Pigment Red 101",    cor:"#901808",corte:"#C06050",luz:8,calor:8,solv:8,teor:"72%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tintas industriais"]},
-    {nome:"Colanyl Azul Óxido COR 100",      ci:"Pigment Blue 28",    cor:"#203880",corte:"#7890C0",luz:8,calor:8,solv:8,teor:"60%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
-    {nome:"Colanyl Verde Óxido G 131",       ci:"Pigment Green 17",   cor:"#307040",corte:"#88B080",luz:8,calor:8,solv:8,teor:"75%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tintas industriais"]},
-    {nome:"Colanyl Preto Óxido B 100",       ci:"Pigment Black 11",   cor:"#282828",corte:"#686868",luz:8,calor:8,solv:8,teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tintas industriais"]},
-    {nome:"Colanyl Branco R 100",            ci:"Pigment White 6",    cor:"#F2F2F2",corte:"#F8F8F8",luz:8,calor:8,solv:8,teor:"70%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
-  ],
-  colanyl500: [
-    {nome:"Colanyl Amarelo 5GX 500",         ci:"Pigment Yellow 74",  cor:"#E8D000",corte:"#F4EC78",luz:6,calor:5,solv:5,teor:"40%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Amarelo H3G 500",         ci:"Pigment Yellow 154", cor:"#D8B800",corte:"#ECCB70",luz:7,calor:6,solv:6,teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Amarelo HRD 500",         ci:"Pigment Yellow 83",  cor:"#D0A000",corte:"#ECC060",luz:6,calor:5,solv:5,teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Vermelho D3GD 500",       ci:"Pigment Red 254",    cor:"#D82000",corte:"#EE8060",luz:8,calor:7,solv:7,teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Vermelho FGR 530",        ci:"Pigment Red 112",    cor:"#D02000",corte:"#EC8060",luz:6,calor:5,solv:5,teor:"47%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Rosa E 530",              ci:"Pigment Red 122",    cor:"#D02860",corte:"#EC90B0",luz:7,calor:6,solv:6,teor:"20%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Violeta RL 500",          ci:"Pigment Violet 23",  cor:"#6030A0",corte:"#B888D0",luz:7,calor:6,solv:6,teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Azul B2G 500",            ci:"Pigment Blue 15:3",  cor:"#1838C0",corte:"#80A8E8",luz:8,calor:7,solv:7,teor:"45%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Verde GG 500",            ci:"Pigment Green 7",    cor:"#187028",corte:"#78B078",luz:8,calor:7,solv:7,teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Preto N 500",             ci:"Pigment Black 7",    cor:"#1A1A1A",corte:"#707070",luz:8,calor:7,solv:7,teor:"43%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Amarelo Óxido BV 530",    ci:"Pigment Yellow 184", cor:"#C8B000",corte:"#E4D060",luz:8,calor:8,solv:8,teor:"65%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Vermelho Óxido G 530",    ci:"Pigment Red 101",    cor:"#A82010",corte:"#D07060",luz:8,calor:8,solv:8,teor:"65%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Verde Óxido G 530",       ci:"Pigment Green 17",   cor:"#307040",corte:"#88B080",luz:8,calor:8,solv:8,teor:"75%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Preto Óxido B 530",       ci:"Pigment Black 11",   cor:"#282828",corte:"#686868",luz:8,calor:8,solv:8,teor:"53%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-    {nome:"Colanyl Branco R 500",            ci:"Pigment White 6",    cor:"#F2F2F2",corte:"#F8F8F8",luz:8,calor:8,solv:8,teor:"65%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Dosagem automática"]},
-  ],
   hostatint: [
     {nome:"Hostatint Amarelo 12G 500",       ci:"Pigment Yellow 3",   cor:"#F0E010",corte:"#F8F080",luz:5,calor:4,solv:4,teor:"40%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
     {nome:"Hostatint Amarelo FGL 500",       ci:"Pigment Yellow 97",  cor:"#E8CC00",corte:"#F4E870",luz:6,calor:5,solv:5,teor:"38%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
@@ -1013,8 +1024,6 @@ const LINE_MAP = {
   hansa:     {fab:"Sudarshan", label:"Hansa®"},
   pvfast:    {fab:"Sudarshan", label:"PV Sólido®"},
   graphtol:  {fab:"Sudarshan", label:"Graphtol®"},
-  colanyl100:{fab:"Sudarshan", label:"Colanyl® 100"},
-  colanyl500:{fab:"Sudarshan", label:"Colanyl® 500"},
   hostatint: {fab:"Sudarshan", label:"Hostatint® 500"},
   solutinte: {fab:"Sudarshan", label:"Solutint® E"},
   flexonyl:  {fab:"Sudarshan", label:"Flexonyl®"},
@@ -1144,7 +1153,91 @@ var LINE_MAP_CQ = {
   'claritintp': {fab:"Clariquimica", label:"Claritint P®"},
 };
 
+var COLANYL = [
+  {nome:"Colanyl Amarelo 10 G",ci:"P.Y. 3",ciFull:"Pigment Yellow 3",luz:"7",intemp:"4-5",teor:"50%",classe:"Azo",dens:"1,28",imob:true,ind:true,esp:true,cor:"#F2DE00",corte:"#FBF1A6"},
+  {nome:"Colanyl Amarelo 5GX BR",ci:"P.Y. 74",ciFull:"Pigment Yellow 74",luz:"6-7",intemp:"4-5",teor:"40%",classe:"Azo",dens:"1,21",imob:true,ind:true,esp:true,cor:"#F6C400",corte:"#FCE9A6"},
+  {nome:"Colanyl Amarelo G",ci:"P.Y. 1",ciFull:"Pigment Yellow 1",luz:"6",intemp:"3-4",teor:"50%",classe:"Azo",dens:"1,21",imob:true,ind:true,esp:true,cor:"#F2B600",corte:"#FAE2A8"},
+  {nome:"Colanyl Amarelo MG 130 BR",ci:"P.Y. 74",ciFull:"Pigment Yellow 74",luz:"7",intemp:"5",teor:"50%",classe:"Azo",dens:"1,24",imob:true,ind:true,esp:true,cor:"#F6C400",corte:"#FCE9A6"},
+  {nome:"Colanyl Amarelo HR",ci:"P.Y. 83",ciFull:"Pigment Yellow 83",luz:"6",intemp:"3-4",teor:"35%",classe:"Diazo",dens:"1,24",imob:false,ind:false,esp:true,cor:"#E89A00",corte:"#F6D9A0"},
+  {nome:"Colanyl Amarelo Óxido R BR",ci:"P.Y. 42",ciFull:"Pigment Yellow 42",luz:"8",intemp:"5",teor:"70%",classe:"Hidróxido de Ferro",dens:"1,87",imob:true,ind:true,esp:true,cor:"#C8901E",corte:"#E7CE96"},
+  {nome:"Colanyl Alaranjado D2R 130-BR",ci:"P.O. 73",ciFull:"Pigment Orange 73",luz:"8",intemp:"5",teor:"35%",classe:"Dicetopirrolopirrol",dens:"1,26",imob:true,ind:true,esp:true,cor:"#E8531A",corte:"#F6A988"},
+  {nome:"Colanyl Vermelho GG",ci:"P.O. 5",ciFull:"Pigment Orange 5",luz:"6-7",intemp:"4-5",teor:"50%",classe:"Azo",dens:"1,33",imob:true,ind:true,esp:true,cor:"#DD3A18",corte:"#F09A80"},
+  {nome:"Colanyl Vermelho FGR",ci:"P.R. 112",ciFull:"Pigment Red 112",luz:"7",intemp:"4",teor:"50%",classe:"Naftol AS",dens:"1,24",imob:true,ind:true,esp:true,cor:"#D21F18",corte:"#EE8E82"},
+  {nome:"Colanyl Carmim FBB",ci:"P.R. 146",ciFull:"Pigment Red 146",luz:"5",intemp:"4",teor:"50%",classe:"Naftol AS",dens:"1,23",imob:false,ind:false,esp:true,cor:"#C01840",corte:"#E88CA6"},
+  {nome:"Colanyl Azul SH BR",ci:"P.B. 15",ciFull:"Pigment Blue 15",luz:"8",intemp:"5",teor:"37%",classe:"Ftalocianina",dens:"1,26",imob:true,ind:true,esp:true,cor:"#0C4DA2",corte:"#88B0D8"},
+  {nome:"Colanyl Azul AR BR",ci:"P.B. 15",ciFull:"Pigment Blue 15",luz:"8",intemp:"5",teor:"50%",classe:"Ftalocianina",dens:"1,26",imob:true,ind:true,esp:true,cor:"#15357E",corte:"#8AA0D2"},
+  {nome:"Colanyl Verde 3GLS",ci:"P.G. 7",ciFull:"Pigment Green 7",luz:"8",intemp:"5",teor:"50%",classe:"Ftalocianina",dens:"1,26",imob:true,ind:true,esp:true,cor:"#0C6B52",corte:"#88BCA8"},
+  {nome:"Colanyl Preto PRQ",ci:"P.Bk. 7",ciFull:"Pigment Black 7",luz:"8",intemp:"5",teor:"35%",classe:"Carbon Black",dens:"1,27",imob:true,ind:true,esp:true,cor:"#1A1A1A",corte:"#6E6E6E"},
+  {nome:"Colanyl Branco TQ",ci:"P.W. 6",ciFull:"Pigment White 6",luz:"8",intemp:"5",teor:"70%",classe:"Dióxido de Titânio",dens:"1,76",imob:true,ind:true,esp:true,cor:"#F4F4F2",corte:"#FAFAF9"}
+];
 
+var COLANYL_SUMMARY = "São preparações de pigmentos orgânicos e inorgânicos, isentas de APEO e etilenoglicol, destinadas à coloração de tintas de emulsão aquosa dos mais diversos tipos para o setor de tintas imobiliárias e para várias outras aplicações em meios aquosos. Estas preparações são isentas de qualquer tipo de resina, permitindo assim uma ampla gama de compatibilidade. Os níveis de solidez que as mesmas apresentam são determinados pelo tipo químico do pigmento base e sua padronização é efetuada pelo poder de tingimento da preparação, e não pelo conteúdo de pigmento.";
+
+function colApps(p){var a=[];if(p.imob)a.push('Tintas imobiliárias');if(p.ind)a.push('Tintas industriais');if(p.esp)a.push('Especialidades');return a.join(',');}
+function colCheck(b){return b?'<span class="tcheck on">\u2713</span>':'<span class="tcheck off">\u2014</span>';}
+function maxNum(s){var m=(''+s).match(/\d+/g);return m?Math.max.apply(null,m.map(Number)):0;}
+function makeBar5(v,elId){var el=document.getElementById(elId);if(!el)return;el.innerHTML='';for(var i=1;i<=5;i++){var s=document.createElement('div');s.className='sbar'+(i<=v?' on':'');el.appendChild(s);}}
+
+function buildColanylTable(){
+  var tb=document.getElementById('tbody-colanyl');
+  if(!tb)return;
+  var html='';
+  for(var i=0;i<COLANYL.length;i++){
+    var p=COLANYL[i];
+    html+='<tr class="product-card prow" data-search="'+(p.nome+' '+p.ci+' '+p.classe).toLowerCase()+'" data-apps="'+colApps(p)+'" data-fab="Sudarshan">'+
+      '<td class="tc-name">'+p.nome+'</td>'+
+      '<td class="tc-ci">'+p.ci+'</td>'+
+      '<td class="tc-swatch"><span class="mini-swatch"><span style="background:'+p.cor+'"></span><span style="background:'+p.corte+'"></span></span></td>'+
+      '<td class="tc-c">'+p.luz+'</td>'+
+      '<td class="tc-c">'+p.intemp+'</td>'+
+      '<td class="tc-c">'+p.teor+'</td>'+
+      '<td class="tc-classe">'+p.classe+'</td>'+
+      '<td class="tc-c">'+p.dens+'</td>'+
+      '<td class="tc-app">'+colCheck(p.imob)+'</td>'+
+      '<td class="tc-app">'+colCheck(p.ind)+'</td>'+
+      '<td class="tc-app">'+colCheck(p.esp)+'</td>'+
+    '</tr>';
+  }
+  tb.innerHTML=html;
+  var rws=tb.querySelectorAll('tr.prow');
+  for(var r=0;r<rws.length;r++){(function(idx){rws[r].addEventListener('click',function(){openDetailColanyl(idx);});})(r);}
+  var cnt=document.getElementById('count-colanyl');
+  if(cnt)cnt.textContent=COLANYL.length+' produtos';
+  var sm=document.getElementById('summary-colanyl');
+  if(sm)sm.innerHTML='<div class="summary-title">Sobre a linha Colanyl\u00ae</div><p>'+COLANYL_SUMMARY+'</p>';
+}
+
+function openDetailColanyl(i){
+  var p=COLANYL[i];
+  document.getElementById('dSwatchFull').style.background=p.cor;
+  document.getElementById('dSwatchCut').style.background=p.corte;
+  document.getElementById('dName').textContent=p.nome;
+  var b=document.getElementById('dBadge');
+  b.innerHTML='<img src="assets/logo-sudarshan.png" alt="Sudarshan">';
+  b.className='detail-fab-badge badge-logo';
+  document.getElementById('dCi').textContent=p.ci+(CI_PT[p.ci]?' \u2014 '+CI_PT[p.ci]:'');
+  var specs=document.querySelector('#detailPanel .detail-specs');
+  specs.innerHTML=
+    '<div class="spec-item"><div class="spec-label">Color Index</div><div class="spec-value">'+(p.ciFull||p.ci)+'</div></div>'+
+    '<div class="spec-item"><div class="spec-label">Classe qu\u00edmica</div><div class="spec-value">'+p.classe+'</div></div>'+
+    '<div class="spec-item"><div class="spec-label">Teor de pigmento</div><div class="spec-value">'+p.teor+'</div></div>'+
+    '<div class="spec-item"><div class="spec-label">Densidade</div><div class="spec-value">'+p.dens+' g/cm\u00b3</div></div>'+
+    '<div class="spec-item"><div class="spec-label">Solidez \u00e0 luz</div><div class="spec-solidez"><span class="spec-solidez-num">'+p.luz+'</span><span class="spec-solidez-max">/8</span><div class="solidez-bar" id="dLuzBarCol"></div></div></div>'+
+    '<div class="spec-item"><div class="spec-label">Solidez \u00e0 intemp\u00e9ries</div><div class="spec-solidez"><span class="spec-solidez-num">'+p.intemp+'</span><span class="spec-solidez-max">/5</span><div class="solidez-bar" id="dIntBarCol"></div></div></div>';
+  makeBar(maxNum(p.luz),'dLuzBarCol');
+  makeBar5(maxNum(p.intemp),'dIntBarCol');
+  var appsEl=document.getElementById('dApps');
+  appsEl.innerHTML='';
+  var apps=[];if(p.imob)apps.push('Tintas imobili\u00e1rias');if(p.ind)apps.push('Tintas industriais');if(p.esp)apps.push('Especialidades');
+  for(var a=0;a<apps.length;a++){var chip=document.createElement('span');chip.className='detail-app';chip.textContent=apps[a];appsEl.appendChild(chip);}
+  document.getElementById('overlay').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+
+
+
+
+var LEGACY_SPECS_HTML='';
 
 function makeBar(v, elId) {
   var el = document.getElementById(elId);
@@ -1360,6 +1453,8 @@ function _openDetailPanel(p, fab, lbl) {
 }
 
 function openDetailCommon(p, fab, lbl) {
+  var _sp=document.querySelector('#detailPanel .detail-specs');
+  if(LEGACY_SPECS_HTML && _sp){ _sp.innerHTML=LEGACY_SPECS_HTML; }
   var p2 = p; // alias para manter compatibilidade
   // usar p direto:
   document.getElementById('dSwatchFull').style.background = p.cor;
@@ -1463,6 +1558,8 @@ function doSearch() {
 
 document.addEventListener('DOMContentLoaded', function() {
   buildCards();
+  LEGACY_SPECS_HTML = document.querySelector('#detailPanel .detail-specs').innerHTML;
+  buildColanylTable();
   doSearch();
   // Fechar overlay
   document.getElementById('overlay').addEventListener('click', function(e) {
