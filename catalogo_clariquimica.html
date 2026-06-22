@@ -346,10 +346,25 @@ tr.product-card.hidden{display:none;}
 .line-summary .summary-title{font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:var(--escuro);margin-bottom:6px;}
 .line-summary p{font-size:12.5px;line-height:1.6;color:var(--muted);margin:0;}
 @media(max-width:559px){
-  .prod-table{min-width:680px;font-size:12px;}
-  .prod-table thead th{padding:8px 8px;}
-  .prod-table td{padding:7px 8px;}
-  .tc-name{min-width:130px;}
+  /* Linha Colanyl: tabela vira CARDS no mobile (sem rolagem lateral) */
+  .prod-table-wrap{max-height:none;overflow:visible;border:none;background:transparent;}
+  .prod-table{min-width:0;width:100%;display:block;font-size:13px;background:transparent;}
+  .prod-table thead{display:none;}
+  .prod-table tbody{display:block;}
+  .prod-table tr.product-card.prow{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--borda);border-radius:var(--r-lg);box-shadow:var(--shadow-sm);margin-bottom:12px;overflow:hidden;}
+  .prod-table tr.product-card.prow:nth-child(even){background:var(--surface);}
+  .prod-table tr.product-card.prow:hover,.prod-table tr.product-card.prow:active{background:var(--surface);}
+  .prod-table td{display:block;border-bottom:1px solid var(--borda);white-space:normal;padding:8px 14px;}
+  /* faixa de cor pleno/corte no topo do card */
+  .prod-table td.tc-swatch{order:1;width:auto;padding:0;text-align:left;}
+  .prod-table td.tc-swatch .mini-swatch{display:flex;width:100%;height:60px;border-radius:0;border:none;box-shadow:none;}
+  /* nome + C.I. */
+  .prod-table td.tc-name{order:2;font-size:15px;font-weight:800;color:var(--escuro);padding:11px 14px 1px;border-bottom:none;text-align:left;min-width:0;}
+  .prod-table td.tc-ci{order:3;font-size:12px;font-style:italic;color:var(--cinza);padding:0 14px 9px;text-align:left;}
+  /* specs como rótulo : valor */
+  .prod-table td.tc-c,.prod-table td.tc-classe,.prod-table td.tc-app{order:4;display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:13px;font-weight:600;color:#333;text-align:right;}
+  .prod-table td.tc-c::before,.prod-table td.tc-classe::before,.prod-table td.tc-app::before{content:attr(data-label);font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--cinza);text-align:left;flex:0 0 auto;}
+  .prod-table tr.product-card.prow td:last-child{border-bottom:none;}
 }
 </style>
 </head>
@@ -1186,14 +1201,14 @@ function buildColanylTable(){
       '<td class="tc-name">'+p.nome+'</td>'+
       '<td class="tc-ci">'+p.ci+'</td>'+
       '<td class="tc-swatch"><span class="mini-swatch"><span style="background:'+p.cor+'"></span><span style="background:'+p.corte+'"></span></span></td>'+
-      '<td class="tc-c">'+p.luz+'</td>'+
-      '<td class="tc-c">'+p.intemp+'</td>'+
-      '<td class="tc-c">'+p.teor+'</td>'+
-      '<td class="tc-classe">'+p.classe+'</td>'+
-      '<td class="tc-c">'+p.dens+'</td>'+
-      '<td class="tc-app">'+colCheck(p.imob)+'</td>'+
-      '<td class="tc-app">'+colCheck(p.ind)+'</td>'+
-      '<td class="tc-app">'+colCheck(p.esp)+'</td>'+
+      '<td class="tc-c" data-label="Solidez à Luz">'+p.luz+'</td>'+
+      '<td class="tc-c" data-label="Solidez à Intempéries">'+p.intemp+'</td>'+
+      '<td class="tc-c" data-label="Teor de Pigmento">'+p.teor+'</td>'+
+      '<td class="tc-classe" data-label="Classe Química">'+p.classe+'</td>'+
+      '<td class="tc-c" data-label="Densidade">'+p.dens+'</td>'+
+      '<td class="tc-app" data-label="Tintas Imobiliárias">'+colCheck(p.imob)+'</td>'+
+      '<td class="tc-app" data-label="Tintas Industriais">'+colCheck(p.ind)+'</td>'+
+      '<td class="tc-app" data-label="Especialidades">'+colCheck(p.esp)+'</td>'+
     '</tr>';
   }
   tb.innerHTML=html;
