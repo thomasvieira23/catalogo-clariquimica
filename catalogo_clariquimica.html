@@ -413,7 +413,7 @@ tr.product-card.hidden{display:none;}
       <div class="cover-index">
         <div class="cover-index-item"><span class="cover-index-dot" style="background:#F78222"></span>Hostaperm · Novoperm · Permanent · Hansa</div>
         <div class="cover-index-item"><span class="cover-index-dot" style="background:#4DA493"></span>PV Sólido · Graphtol</div>
-        <div class="cover-index-item"><span class="cover-index-dot" style="background:#0094DA"></span>Colanyl® · Hostatint 500</div>
+        <div class="cover-index-item"><span class="cover-index-dot" style="background:#0094DA"></span>Colanyl® · Hostatint</div>
       </div>
     </div>
   </div>
@@ -572,16 +572,23 @@ tr.product-card.hidden{display:none;}
   </div>
 </section>
 
-<!-- HOSTATINT 500 -->
-<section class="line-section" data-fab="Sudarshan" data-apps="Tintas imobiliárias,Tinting systems" id="line-hostatint">
+<!-- HOSTATINT -->
+<section class="line-section" data-fab="Sudarshan" data-apps="Tinta de emulsão aquosa,Esmalte sintético não emulsionado,Tinta de emulsão acrílica aquosa,Vernizes à base de água,Vernizes alquídicos de secagem ao ar" id="line-hostatint">
   <div class="line-banner"><div class="line-accent" style="background:#C08030"></div>
     <div class="line-body">
-      <div class="line-body-top"><div class="line-name">Hostatint<sup>®</sup> 500</div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
-      <div class="line-desc">Dispersões aquosas universais para sistemas de tingimento (tinting systems). Compatíveis com ampla gama de bases aquosas para tintas decorativas de interior e exterior.</div>
-      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Tinting systems</span></div><span class="line-count" id="count-hostatint"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+      <div class="line-body-top"><div class="line-name">Hostatint<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
+      <div class="line-desc">Preparações multipropósito de pigmentos orgânicos e inorgânicos, isentas de APEO e etilenoglicol, para tingimento de tintas de emulsão aquosa e esmaltes alquídicos não emulsionados. Boa reologia para sistemas automáticos de dosagem; padronização pelo poder de tingimento, não pelo teor de pigmento.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Multipropósito</span><span class="line-chip">Tintas de emulsão</span><span class="line-chip">Esmaltes alquídicos</span></div><span class="line-count" id="count-hostatint"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
     </div>
   </div>
-  <div class="product-grid" id="grid-hostatint"></div>
+  <div class="line-panel">
+    <div class="prod-table-wrap">
+      <table class="prod-table" id="table-hostatint">
+        <thead id="thead-hostatint"></thead>
+        <tbody id="tbody-hostatint"></tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 
@@ -1021,28 +1028,6 @@ const PRODUCTS = {
     {nome:"Graphtol Carmim HF4C",    ci:"Pigment Red 185",    cor:"#C02848",corte:"#E07888",luz:6,calor:5,solv:5,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Papel"]},
     {nome:"Graphtol Azul AN",        ci:"Pigment Blue 15",    cor:"#1840B0",corte:"#80A0E0",luz:6,calor:5,solv:5,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
   ],
-  hostatint: [
-    {nome:"Hostatint Amarelo 12G 500",       ci:"Pigment Yellow 3",   cor:"#F0E010",corte:"#F8F080",luz:5,calor:4,solv:4,teor:"40%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Amarelo FGL 500",       ci:"Pigment Yellow 97",  cor:"#E8CC00",corte:"#F4E870",luz:6,calor:5,solv:5,teor:"38%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Amarelo H3G 500",       ci:"Pigment Yellow 154", cor:"#D8B800",corte:"#ECCB70",luz:7,calor:6,solv:6,teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Amarelo HR 500",        ci:"Pigment Yellow 83",  cor:"#D0A000",corte:"#ECC060",luz:6,calor:5,solv:5,teor:"15%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Laranja GR 500",        ci:"Pigment Orange 43",  cor:"#E07020",corte:"#F0B068",luz:6,calor:5,solv:5,teor:"22%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Escarlate GO 500",      ci:"Pigment Red 168",    cor:"#E02800",corte:"#F09070",luz:7,calor:6,solv:6,teor:"35%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Vermelho FGR 500",      ci:"Pigment Red 112",    cor:"#D02000",corte:"#EC8060",luz:6,calor:5,solv:5,teor:"21%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Vermelho D3GD 500",     ci:"Pigment Red 254",    cor:"#D82000",corte:"#EE8060",luz:8,calor:7,solv:7,teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Rosa E 500",            ci:"Pigment Red 122",    cor:"#D02860",corte:"#EC90B0",luz:7,calor:6,solv:6,teor:"20%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Violeta RL 500",        ci:"Pigment Violet 23",  cor:"#6030A0",corte:"#B888D0",luz:7,calor:6,solv:6,teor:"18%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Azul B2G 500",          ci:"Pigment Blue 15:3",  cor:"#1838C0",corte:"#80A8E8",luz:8,calor:7,solv:7,teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Verde GG 500",          ci:"Pigment Green 7",    cor:"#187028",corte:"#78B078",luz:8,calor:7,solv:7,teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Preto GR 500",          ci:"Pigment Black 7",    cor:"#1A1A1A",corte:"#707070",luz:8,calor:7,solv:7,teor:"35%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Amarelo Óxido BV 500",  ci:"Pigment Yellow 184", cor:"#C8B000",corte:"#E4D060",luz:8,calor:8,solv:8,teor:"65%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Amarelo Óxido R 500",   ci:"Pigment Yellow 42",  cor:"#B89020",corte:"#D8B860",luz:8,calor:8,solv:8,teor:"60%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Vermelho Óxido B 500",  ci:"Pigment Red 101",    cor:"#901808",corte:"#C06050",luz:8,calor:8,solv:8,teor:"68%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Azul Óxido COR 500",    ci:"Pigment Blue 28",    cor:"#203880",corte:"#7890C0",luz:8,calor:8,solv:8,teor:"65%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Verde Óxido G 500",     ci:"Pigment Green 17",   cor:"#307040",corte:"#88B080",luz:8,calor:8,solv:8,teor:"67%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Preto Óxido B 500",     ci:"Pigment Black 33",   cor:"#282828",corte:"#686868",luz:8,calor:8,solv:8,teor:"70%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-    {nome:"Hostatint Branco R 500",          ci:"Pigment White 6",    cor:"#F2F2F2",corte:"#F8F8F8",luz:8,calor:8,solv:8,teor:"70%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Tinting systems"]},
-  ]
 };
 
 const LINE_MAP = {
@@ -1052,7 +1037,6 @@ const LINE_MAP = {
   hansa:     {fab:"Sudarshan", label:"Hansa®"},
   pvfast:    {fab:"Sudarshan", label:"PV Sólido®"},
   graphtol:  {fab:"Sudarshan", label:"Graphtol®"},
-  hostatint: {fab:"Sudarshan", label:"Hostatint® 500"},
   solutinte: {fab:"Sudarshan", label:"Solutint® E"},
 };
 
@@ -1369,6 +1353,45 @@ var FLEXONYL_CFG = {
     {kind:'app',field:'latex',label:'Látex',app:'Látex'},
     {kind:'app',field:'esp',label:'Especialidades',app:'Especialidades'},
     {kind:'app',field:'fitas',label:'Fitas Adesivas',app:'Fitas adesivas'}
+  ]
+};
+
+
+var HOSTATINT = [
+  {nome:"Hostatint Amarelo 2GXD BR",ci:"P.Y. 74",ciFull:"Pigment Yellow 74",cor:"#F4C400",corte:"#FBE6A0",luz:"7",intemp:"4",alcalis:"5",acidos:"5",teor:"45%",classe:"Azo",dens:"1,13",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Amarelo 3RXD-30",ci:"P.Y. 65",ciFull:"Pigment Yellow 65",cor:"#F2B81E",corte:"#FAE0A0",luz:"7",intemp:"4",alcalis:"5",acidos:"5",teor:"30%",classe:"Azo",dens:"1,16",emul:false,esm:true,acril:true,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Amarelo Óxido R BR",ci:"P.Y. 42",ciFull:"Pigment Yellow 42",cor:"#C8901E",corte:"#E6CC92",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"60%",classe:"Hidróxido de Ferro",dens:"1,73",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Amarelo Óxido OFT BR",ci:"P.Y. 42",ciFull:"Pigment Yellow 42",cor:"#C88A22",corte:"#E4C88E",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"35%",classe:"Hidróxido de Ferro Transparente",dens:"1,30",emul:false,esm:false,acril:false,vernAgua:true,vernAlq:true},
+  {nome:"Hostatint Vermelho GG",ci:"P.O. 5",ciFull:"Pigment Orange 5",cor:"#DD3A18",corte:"#F09A80",luz:"6-7",intemp:"3-4",alcalis:"5",acidos:"5",teor:"45%",classe:"Azo",dens:"1,23",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Vermelho FGR 30 BR",ci:"P.R. 112",ciFull:"Pigment Red 112",cor:"#D21F18",corte:"#EE8E82",luz:"7",intemp:"4",alcalis:"5",acidos:"5",teor:"36%",classe:"Naftol AS",dens:"1,23",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Vermelho Óxido B BR",ci:"P.R. 101",ciFull:"Pigment Red 101",cor:"#8A2020",corte:"#B86060",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"70%",classe:"Óxido de Ferro",dens:"2,05",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Vermelho Óxido OT BR",ci:"P.R. 101",ciFull:"Pigment Red 101",cor:"#9A2A1C",corte:"#C57058",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"40%",classe:"Óxido de Ferro Transparente",dens:"1,35",emul:false,esm:false,acril:false,vernAgua:true,vernAlq:true},
+  {nome:"Hostatint Rosa EW 500",ci:"P.R. 122",ciFull:"Pigment Red 122",cor:"#C44080",corte:"#DF80B0",luz:"7-8",intemp:"4-5",alcalis:"5",acidos:"5",teor:"20%",classe:"Quinacridona",dens:"1,15",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint B2G 30 BR",ci:"P.B. 15:3",ciFull:"Pigment Blue 15:3",cor:"#0F62A8",corte:"#84B6D6",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"35%",classe:"Ftalocianina",dens:"1,15",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Azul RI BR",ci:"P.B. 29",ciFull:"Pigment Blue 29",cor:"#2C46A0",corte:"#8A98D0",luz:"8",intemp:"5",alcalis:"2-3",acidos:"1",teor:"60%",classe:"Azul Ultramar",dens:"1,65",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Verde GG",ci:"P.G. 7",ciFull:"Pigment Green 7",cor:"#0C6B4A",corte:"#84BBA0",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"40%",classe:"Ftalocianina",dens:"1,24",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Preto VY BR",ci:"P.Bk. 7",ciFull:"Pigment Black 7",cor:"#1A1A1A",corte:"#6E6E6E",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"40%",classe:"Carbon Black",dens:"1,27",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Preto RC MX",ci:"P.Bk. 7",ciFull:"Pigment Black 7",cor:"#1F1F1F",corte:"#707070",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"35%",classe:"Carbon Black",dens:"1,25",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false},
+  {nome:"Hostatint Branco T BR",ci:"P.W. 6",ciFull:"Pigment White 6",cor:"#F4F4F2",corte:"#FAFAF9",luz:"8",intemp:"5",alcalis:"5",acidos:"5",teor:"70%",classe:"Dióxido de Titânio",dens:"2,01",emul:true,esm:true,acril:false,vernAgua:false,vernAlq:false}
+];
+var HOSTATINT_CFG = {
+  key:'hostatint', fab:'Sudarshan', data:HOSTATINT,
+  columns:[
+    {kind:'name',field:'nome',label:'Produto'},
+    {kind:'ci',field:'ci',label:'C.I.'},
+    {kind:'swatch',label:'Tom Pleno / Corte'},
+    {kind:'num',field:'luz',label:'Solidez à Luz',bar:8},
+    {kind:'num',field:'intemp',label:'Solidez à Intempéries'},
+    {kind:'num',field:'alcalis',label:'Solidez a Álcalis'},
+    {kind:'num',field:'acidos',label:'Solidez a Ácidos'},
+    {kind:'num',field:'teor',label:'Teor de Pigmento'},
+    {kind:'classe',field:'classe',label:'Classe Química'},
+    {kind:'num',field:'dens',label:'Densidade',unit:'g/cm\u00b3'},
+    {kind:'app',field:'emul',label:'Tinta de Emulsão Aquosa',app:'Tinta de emulsão aquosa'},
+    {kind:'app',field:'esm',label:'Esmalte Sintético Não Emulsionado',app:'Esmalte sintético não emulsionado'},
+    {kind:'app',field:'acril',label:'Tinta de Emulsão Acrílica Aquosa',app:'Tinta de emulsão acrílica aquosa'},
+    {kind:'app',field:'vernAgua',label:'Vernizes à Base de Água',app:'Vernizes à base de água'},
+    {kind:'app',field:'vernAlq',label:'Vernizes Alquídicos de Secagem ao Ar',app:'Vernizes alquídicos de secagem ao ar'}
   ]
 };
 
@@ -1697,6 +1720,7 @@ document.addEventListener('DOMContentLoaded', function() {
   buildColanylTable();
   buildSpecTable(CLARITINT_CFG);
   buildSpecTable(FLEXONYL_CFG);
+  buildSpecTable(HOSTATINT_CFG);
   doSearch();
   // Fechar overlay
   document.getElementById('overlay').addEventListener('click', function(e) {
