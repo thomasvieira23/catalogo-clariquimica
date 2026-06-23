@@ -683,15 +683,22 @@ tr.product-card.hidden{display:none;}
 </section>
 
 <!-- FLEXONYL -->
-<section class="line-section" data-fab="Sudarshan" data-apps="Tintas imobiliárias,Base água,Tinting,Construção" id="line-flexonyl">
+<section class="line-section" data-fab="Sudarshan" data-apps="Tintas gráficas aquosas,Látex,Especialidades,Fitas adesivas" id="line-flexonyl">
   <div class="line-banner"><div class="line-accent" style="background:#C84040"></div>
     <div class="line-body">
-      <div class="line-body-top"><div class="line-name">Flexonyl<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
-      <div class="line-desc">Dispersão pigmentária aquosa isenta de APEO e etilenoglicol, com pequena quantidade de resina acrílica como estabilizador. Ampla compatibilidade e flexibilidade em emulsões aquosas para tintas imobiliárias e diversas aplicações.</div>
-      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas imobiliárias</span><span class="line-chip">Base água</span><span class="line-chip">Tinting</span></div><span class="line-count" id="count-flexonyl"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+      <div class="line-body-top"><div class="line-name">Flexonyl A<sup>®</sup> / Flexonyl WF<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
+      <div class="line-desc">Preparações pigmentárias altamente concentradas para tintas flexográficas de base aquosa. A versão A garante ótima estabilidade, printabilidade e baixa formação de espuma; a versão WF incorpora uma pequena quantidade de resina acrílica para melhor compatibilidade nos veículos e maior qualidade do filme.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas gráficas aquosas</span><span class="line-chip">Látex</span><span class="line-chip">Especialidades</span></div><span class="line-count" id="count-flexonyl"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
     </div>
   </div>
-  <div class="product-grid" id="grid-flexonyl"></div>
+  <div class="line-panel">
+    <div class="prod-table-wrap">
+      <table class="prod-table" id="table-flexonyl">
+        <thead id="thead-flexonyl"></thead>
+        <tbody id="tbody-flexonyl"></tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <div class="empty" id="emptyState">
@@ -1047,7 +1054,6 @@ const LINE_MAP = {
   graphtol:  {fab:"Sudarshan", label:"Graphtol®"},
   hostatint: {fab:"Sudarshan", label:"Hostatint® 500"},
   solutinte: {fab:"Sudarshan", label:"Solutint® E"},
-  flexonyl:  {fab:"Sudarshan", label:"Flexonyl®"},
 };
 
 // ── DADOS LANXESS ──────────────────────────────────────────────────────
@@ -1137,19 +1143,6 @@ var PRODUCTS_SUD_EXTRA = {
     {nome:"Solutint E Branco T",       ci:"P.W.6",   cor:"#F0F0F0",corte:"#FAFAFA",tom:"Branco",            luz:8, calor:8, solv:8, teor:"60%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Tintas decorativas"]},
     {nome:"Solutint A Trans Amarelo Conc-MX",ci:"P.Y.42",cor:"#C09838",corte:"#D8B870",tom:"Amarelo Óxido Trans.",luz:8,calor:8,solv:8,teor:"45%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Madeira"]},
     {nome:"Solutint A Trans Vermelho Conc-MX",ci:"P.R.101",cor:"#922018",corte:"#C06050",tom:"Vermelho Óxido Trans.",luz:8,calor:8,solv:8,teor:"55%",emb:"20 kg lata",apps:["Esmaltes alquídicos","Madeira"]},
-  ],
-  'flexonyl': [
-    {nome:"Flexonyl Amarelo AG-BR",       ci:"P.Y.13",  cor:"#D8C030",corte:"#E8D870",tom:"Amarelo Diarílida",  luz:5, calor:5, solv:7, teor:"40%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
-    {nome:"Flexonyl Vermelho A-F2R-BR",   ci:"P.R.2",   cor:"#D02828",corte:"#E07070",tom:"Vermelho Naftol",    luz:6, calor:6, solv:7, teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
-    {nome:"Flexonyl Vermelho A-F5RK-BR",  ci:"P.R.179", cor:"#C01830",corte:"#DF5870",tom:"Vermelho Naftol Escuro",luz:6,calor:6,solv:7,teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
-    {nome:"Flexonyl Alaranjado A-G-BR",   ci:"P.O.13",  cor:"#D84828",corte:"#E88868",tom:"Laranja Diarílida",  luz:6, calor:6, solv:7, teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
-    {nome:"Flexonyl Rubi WF-571-BR",      ci:"P.R.57:1",cor:"#AA1050",corte:"#D05080",tom:"Rubi Laca Azo",      luz:6, calor:6, solv:7, teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
-    {nome:"Flexonyl Azul WF-150-BR",      ci:"P.B.15:0",cor:"#1840B0",corte:"#5070C8",tom:"Azul Ftalocianina α",luz:8, calor:8, solv:8, teor:"35%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
-    {nome:"Flexonyl Azul WF-153-BR",      ci:"P.B.15:3",cor:"#2255C0",corte:"#6688D8",tom:"Azul Ftalocianina β",luz:8, calor:8, solv:8, teor:"35%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
-    {nome:"Flexonyl Verde-A-GG-BR",       ci:"P.G.7",   cor:"#1A7040",corte:"#58A070",tom:"Verde Ftalocianina", luz:8, calor:8, solv:8, teor:"50%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
-    {nome:"Flexonyl Preto WF-007",        ci:"P.Bk.7",  cor:"#1A1A1A",corte:"#606060",tom:"Negro de Fumo",      luz:8, calor:7, solv:8, teor:"40%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
-    {nome:"Flexonyl Violeta A-RL-BR",     ci:"P.V.23",  cor:"#6A28AA",corte:"#A060D0",tom:"Violeta Dioxazina",  luz:7, calor:7, solv:8, teor:"30%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias","Base água"]},
-    {nome:"Flexonyl Havana K-BR",         ci:"MIX",     cor:"#7A4820",corte:"#B08060",tom:"Marrom (mistura)",   luz:7, calor:7, solv:8, teor:"60%",emb:"20 kg / 180 kg",apps:["Tintas imobiliárias"]},
   ],
 };
 
@@ -1346,6 +1339,38 @@ function openSpecDetail(key,i){
   document.body.style.overflow='hidden';
 }
 
+
+
+var FLEXONYL = [
+  {nome:"Flexonyl Amarelo A GR BR",ci:"P.Y. 13",ciFull:"Pigment Yellow 13",cor:"#D8C030",corte:"#E8D870",luz:"4-5",alcalis:"5",acidos:"5",teor:"45%",classe:"Diazo",dens:"1,16",graf:true,latex:true,esp:true,fitas:false},
+  {nome:"Flexonyl Alaranjado A G BR",ci:"P.O. 13",ciFull:"Pigment Orange 13",cor:"#D84828",corte:"#E88868",luz:"3",alcalis:"5",acidos:"5",teor:"45%",classe:"Diazo",dens:"1,15",graf:true,latex:true,esp:true,fitas:false},
+  {nome:"Flexonyl Vermelho A F2R BR",ci:"P.R. 2",ciFull:"Pigment Red 2",cor:"#D02828",corte:"#E07070",luz:"5",alcalis:"4",acidos:"5",teor:"50%",classe:"Naftol AS",dens:"1,17",graf:true,latex:false,esp:true,fitas:false},
+  {nome:"Flexonyl Vermelho A F5RK BR",ci:"P.R. 170",ciFull:"Pigment Red 170",cor:"#C01830",corte:"#DF5870",luz:"7",alcalis:"5",acidos:"5",teor:"50%",classe:"Naftol AS",dens:"1,21",graf:true,latex:true,esp:true,fitas:false},
+  {nome:"Flexonyl Havana K BR",ci:"MIX",ciFull:"MIX",cor:"#7A4820",corte:"#B08060",luz:"4",alcalis:"5",acidos:"5",teor:"50%",classe:"Mistura",dens:"1,27",graf:false,latex:false,esp:true,fitas:true},
+  {nome:"Flexonyl Azul WF 150 BR",ci:"P.B. 15",ciFull:"Pigment Blue 15",cor:"#1840B0",corte:"#5070C8",luz:"6",alcalis:"3-4",acidos:"5",teor:"47%",classe:"Ftalocianina",dens:"1,23",graf:true,latex:true,esp:true,fitas:false},
+  {nome:"Flexonyl Azul WF 153 BR",ci:"P.B. 15:3",ciFull:"Pigment Blue 15:3",cor:"#2255C0",corte:"#6688D8",luz:"8",alcalis:"5",acidos:"11",teor:"50%",classe:"Ftalocianina",dens:"1,17",graf:true,latex:true,esp:true,fitas:false},
+  {nome:"Flexonyl Violeta A RL BR",ci:"P.V. 23",ciFull:"Pigment Violet 23",cor:"#6A28AA",corte:"#A060D0",luz:"7-8",alcalis:"4-5",acidos:"5",teor:"30%",classe:"Dioxazina",dens:"1,13",graf:true,latex:true,esp:true,fitas:false},
+  {nome:"Flexonyl Verde A GG BR",ci:"P.G. 7",ciFull:"Pigment Green 7",cor:"#1A7040",corte:"#58A070",luz:"7",alcalis:"4",acidos:"5",teor:"48%",classe:"Ftalocianina",dens:"1,38",graf:true,latex:true,esp:true,fitas:false},
+  {nome:"Flexonyl Preto WF 007 BR",ci:"P.Bk. 7",ciFull:"Pigment Black 7",cor:"#1A1A1A",corte:"#606060",luz:"5",alcalis:"4",acidos:"5",teor:"40%",classe:"Carbon Black",dens:"1,27",graf:true,latex:true,esp:true,fitas:false}
+];
+var FLEXONYL_CFG = {
+  key:'flexonyl', fab:'Sudarshan', data:FLEXONYL,
+  columns:[
+    {kind:'name',field:'nome',label:'Produto'},
+    {kind:'ci',field:'ci',label:'C.I.'},
+    {kind:'swatch',label:'Tom Pleno / Corte'},
+    {kind:'num',field:'luz',label:'Solidez à Luz',bar:8},
+    {kind:'num',field:'alcalis',label:'Solidez a Álcalis'},
+    {kind:'num',field:'acidos',label:'Solidez a Ácidos'},
+    {kind:'num',field:'teor',label:'Teor de Pigmento'},
+    {kind:'classe',field:'classe',label:'Classe Química'},
+    {kind:'num',field:'dens',label:'Densidade',unit:'g/cm\u00b3'},
+    {kind:'app',field:'graf',label:'Tintas Gráficas Aquosas',app:'Tintas gráficas aquosas'},
+    {kind:'app',field:'latex',label:'Látex',app:'Látex'},
+    {kind:'app',field:'esp',label:'Especialidades',app:'Especialidades'},
+    {kind:'app',field:'fitas',label:'Fitas Adesivas',app:'Fitas adesivas'}
+  ]
+};
 
 var LEGACY_SPECS_HTML='';
 
@@ -1671,6 +1696,7 @@ document.addEventListener('DOMContentLoaded', function() {
   LEGACY_SPECS_HTML = document.querySelector('#detailPanel .detail-specs').innerHTML;
   buildColanylTable();
   buildSpecTable(CLARITINT_CFG);
+  buildSpecTable(FLEXONYL_CFG);
   doSearch();
   // Fechar overlay
   document.getElementById('overlay').addEventListener('click', function(e) {
