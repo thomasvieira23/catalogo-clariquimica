@@ -553,19 +553,7 @@ tr.product-card.hidden{display:none;}
   <div class="line-panel">
     <div class="prod-table-wrap">
       <table class="prod-table" id="table-colanyl">
-        <thead><tr>
-          <th class="th-prod">Produto</th>
-          <th class="th-ci">C.I.</th>
-          <th class="th-cor">Tom Pleno / Corte</th>
-          <th class="th-w th-num">Solidez à Luz</th>
-          <th class="th-w th-num">Solidez à Intempéries</th>
-          <th class="th-w th-num">Teor de Pigmento</th>
-          <th class="th-w th-classe">Classe Química</th>
-          <th class="th-w th-num">Densidade</th>
-          <th class="th-w th-app">Tintas Imobiliárias</th>
-          <th class="th-w th-app">Tintas Industriais</th>
-          <th class="th-w th-app">Especialidades</th>
-        </tr></thead>
+        <thead id="thead-colanyl"></thead>
         <tbody id="tbody-colanyl"></tbody>
       </table>
     </div>
@@ -1274,18 +1262,31 @@ function cfgApps(cfg,p){
   for(var c=0;c<cfg.columns.length;c++){var col=cfg.columns[c];if(col.kind==='app'&&p[col.field])a.push(col.app||col.label);}
   return a.join(',');
 }
+function tableColumns(cfg){
+  var cols=[];
+  for(var i=0;i<cfg.columns.length;i++){if(cfg.columns[i].kind!=='app')cols.push(cfg.columns[i]);}
+  var ciI=-1,clI=-1;
+  for(var j=0;j<cols.length;j++){if(cols[j].kind==='ci')ciI=j;if(cols[j].kind==='classe')clI=j;}
+  if(ciI>-1&&clI>-1&&clI!==ciI-1){
+    var moved=cols.splice(clI,1)[0];
+    var ci2=-1;for(var k=0;k<cols.length;k++){if(cols[k].kind==='ci')ci2=k;}
+    cols.splice(ci2,0,moved);
+  }
+  return cols;
+}
 function buildSpecTable(cfg){
   SPEC_CFG[cfg.key]=cfg;
   var tb=document.getElementById('tbody-'+cfg.key);
   if(!tb)return;
+  var cols=tableColumns(cfg);
   var thead=document.getElementById('thead-'+cfg.key);
-  if(thead){var h='<tr>';for(var c=0;c<cfg.columns.length;c++){h+='<th class="'+specHeadClass(cfg.columns[c])+'">'+cfg.columns[c].label+'</th>';}thead.innerHTML=h+'</tr>';}
+  if(thead){var h='<tr>';for(var c=0;c<cols.length;c++){h+='<th class="'+specHeadClass(cols[c])+'">'+cols[c].label+'</th>';}thead.innerHTML=h+'</tr>';}
   var html='';
   for(var i=0;i<cfg.data.length;i++){
     var p=cfg.data[i];
     var search=(p.nome+' '+p.ci+' '+(p.classe||'')).toLowerCase();
     html+='<tr class="product-card prow" data-search="'+search+'" data-apps="'+cfgApps(cfg,p)+'" data-fab="'+cfg.fab+'">';
-    for(var c2=0;c2<cfg.columns.length;c2++){html+=specCell(p,cfg.columns[c2]);}
+    for(var c2=0;c2<cols.length;c2++){html+=specCell(p,cols[c2]);}
     html+='</tr>';
   }
   tb.innerHTML=html;
@@ -1392,6 +1393,24 @@ var HOSTATINT_CFG = {
     {kind:'app',field:'acril',label:'Tinta de Emulsão Acrílica Aquosa',app:'Tinta de emulsão acrílica aquosa'},
     {kind:'app',field:'vernAgua',label:'Vernizes à Base de Água',app:'Vernizes à base de água'},
     {kind:'app',field:'vernAlq',label:'Vernizes Alquídicos de Secagem ao Ar',app:'Vernizes alquídicos de secagem ao ar'}
+  ]
+};
+
+
+var COLANYL_CFG = {
+  key:'colanyl', fab:'Sudarshan', data:COLANYL,
+  columns:[
+    {kind:'name',field:'nome',label:'Produto'},
+    {kind:'ci',field:'ci',label:'C.I.'},
+    {kind:'swatch',label:'Tom Pleno / Corte'},
+    {kind:'num',field:'luz',label:'Solidez à Luz',bar:8},
+    {kind:'num',field:'intemp',label:'Solidez à Intempéries',bar:5},
+    {kind:'num',field:'teor',label:'Teor de Pigmento'},
+    {kind:'classe',field:'classe',label:'Classe Química'},
+    {kind:'num',field:'dens',label:'Densidade',unit:'g/cm\u00b3'},
+    {kind:'app',field:'imob',label:'Tintas Imobiliárias',app:'Tintas imobiliárias'},
+    {kind:'app',field:'ind',label:'Tintas Industriais',app:'Tintas industriais'},
+    {kind:'app',field:'esp',label:'Especialidades',app:'Especialidades'}
   ]
 };
 
@@ -1717,7 +1736,7 @@ function doSearch() {
 document.addEventListener('DOMContentLoaded', function() {
   buildCards();
   LEGACY_SPECS_HTML = document.querySelector('#detailPanel .detail-specs').innerHTML;
-  buildColanylTable();
+  buildSpecTable(COLANYL_CFG);
   buildSpecTable(CLARITINT_CFG);
   buildSpecTable(FLEXONYL_CFG);
   buildSpecTable(HOSTATINT_CFG);
