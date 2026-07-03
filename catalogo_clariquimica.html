@@ -312,8 +312,8 @@ body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg);c
 /* ══ TABELA DE PRODUTOS (piloto: Colanyl) ══════════════════ */
 .line-panel{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1),padding .25s;background:var(--surface);border:1px solid var(--borda);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);padding:0 12px;}
 .line-section.open .line-panel{max-height:9000px;padding:12px;}
-.prod-table-wrap{overflow:auto;max-height:68vh;-webkit-overflow-scrolling:touch;border:1px solid var(--borda);border-radius:var(--r-lg);width:-moz-fit-content;width:fit-content;max-width:100%;margin:0 auto;}
-.prod-table{border-collapse:collapse;width:auto;font-size:12.5px;background:var(--surface);}
+.prod-table-wrap{overflow:auto;max-height:68vh;-webkit-overflow-scrolling:touch;border:1px solid var(--borda);border-radius:var(--r-lg);}
+.prod-table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:12.5px;background:var(--surface);}
 .prod-table thead th{position:sticky;top:0;z-index:3;background:var(--escuro);color:#fff;font-size:9.5px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:9px 8px;text-align:center;vertical-align:middle;line-height:1.22;white-space:nowrap;}
 .prod-table thead th.th-w{white-space:normal;}
 .prod-table thead th.th-cor,.prod-table thead th.th-num,.prod-table thead th.th-app{text-align:center;}
@@ -1274,11 +1274,25 @@ function tableColumns(cfg){
   }
   return cols;
 }
+function colWeight(col){
+  if(col.kind==='name')return 2.4;
+  if(col.kind==='classe')return 1.5;
+  if(col.kind==='ci')return 0.95;
+  if(col.kind==='swatch')return 1.15;
+  return 1.05;
+}
 function buildSpecTable(cfg){
   SPEC_CFG[cfg.key]=cfg;
   var tb=document.getElementById('tbody-'+cfg.key);
   if(!tb)return;
   var cols=tableColumns(cfg);
+  var tbl=document.getElementById('table-'+cfg.key);
+  if(tbl){
+    var tot=0,w;for(w=0;w<cols.length;w++)tot+=colWeight(cols[w]);
+    var cg='<colgroup>';for(w=0;w<cols.length;w++)cg+='<col style="width:'+(colWeight(cols[w])/tot*100).toFixed(3)+'%">';cg+='</colgroup>';
+    var oc=tbl.querySelector('colgroup');if(oc)oc.parentNode.removeChild(oc);
+    tbl.insertAdjacentHTML('afterbegin',cg);
+  }
   var thead=document.getElementById('thead-'+cfg.key);
   if(thead){var h='<tr>';for(var c=0;c<cols.length;c++){h+='<th class="'+specHeadClass(cols[c])+'">'+cols[c].label+'</th>';}thead.innerHTML=h+'</tr>';}
   var html='';
