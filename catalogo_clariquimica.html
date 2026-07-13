@@ -518,27 +518,41 @@ tr.product-card.hidden{display:none;}
 </section>
 
 <!-- PV SÓLIDO -->
-<section class="line-section" data-fab="Sudarshan" data-apps="Plásticos,Borracha,Tintas industriais,Tintas gráficas" id="line-pvfast">
+<section class="line-section" data-fab="Sudarshan" data-apps="Poliolefinas,PVC plastificado,Poliestireno,Polibutileno tereftalato (PBT),Policarbonato (PC),Poliamida (PA6)" id="line-pvfast">
   <div class="line-banner"><div class="line-accent" style="background:#0094DA"></div>
     <div class="line-body">
       <div class="line-body-top"><div class="line-name">PV Sólido<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
-      <div class="line-desc">Pigmentos de alta performance para plásticos, borracha e tintas de alta exigência. Excepcional solidez ao calor, ótima dispersibilidade e excelente resistência a solventes.</div>
-      <div class="line-meta"><div class="line-chips"><span class="line-chip">Plásticos</span><span class="line-chip">Borracha</span><span class="line-chip">Tintas industriais</span></div><span class="line-count" id="count-pvfast"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+      <div class="line-desc">Linha global de pigmentos orgânicos de alta performance para coloração de polímeros. Altíssima estabilidade térmica (até 300 °C), excelente resistência à migração e à luz/UV — indicada para masterbatches, fibras e filmes finos, fios e cabos e embalagens (itens com conformidade FDA).</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Masterbatches</span><span class="line-chip">Fibras e filmes</span><span class="line-chip">Fios e cabos</span></div><span class="line-count" id="count-pvfast"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
     </div>
   </div>
-  <div class="product-grid" id="grid-pvfast"></div>
+  <div class="line-panel">
+    <div class="prod-table-wrap">
+      <table class="prod-table" id="table-pvfast">
+        <thead id="thead-pvfast"></thead>
+        <tbody id="tbody-pvfast"></tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <!-- GRAPHTOL -->
-<section class="line-section" data-fab="Sudarshan" data-apps="Tintas gráficas,Papel" id="line-graphtol">
+<section class="line-section" data-fab="Sudarshan" data-apps="Poliolefinas,PVC plastificado,Poliestireno,Policarbonato (PC)" id="line-graphtol">
   <div class="line-banner"><div class="line-accent" style="background:#8040A0"></div>
     <div class="line-body">
       <div class="line-body-top"><div class="line-name">Graphtol<sup>®</sup></div><span class="line-badge badge-logo"><img src="assets/logo-sudarshan.png" alt="Sudarshan"></span></div>
-      <div class="line-desc">Pigmentos para impressão gráfica e papel com boa força tintorial e propriedades reológicas otimizadas para sistemas offset, rotogravura e flexografia.</div>
-      <div class="line-meta"><div class="line-chips"><span class="line-chip">Tintas gráficas</span><span class="line-chip">Papel</span></div><span class="line-count" id="count-graphtol"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
+      <div class="line-desc">Gama consagrada de pigmentos orgânicos clássicos (standard) para coloração de plásticos de uso geral. Ótimo custo-benefício com cores vivas, estabilidade térmica moderada a alta e fácil incorporação — indicada para masterbatches, bens de consumo, brinquedos e embalagens sem exposição solar prolongada.</div>
+      <div class="line-meta"><div class="line-chips"><span class="line-chip">Masterbatches</span><span class="line-chip">Bens de consumo</span><span class="line-chip">Embalagens</span></div><span class="line-count" id="count-graphtol"></span><div class="line-toggle"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="m6 9 6 6 6-6"/></svg></div></div>
     </div>
   </div>
-  <div class="product-grid" id="grid-graphtol"></div>
+  <div class="line-panel">
+    <div class="prod-table-wrap">
+      <table class="prod-table" id="table-graphtol">
+        <thead id="thead-graphtol"></thead>
+        <tbody id="tbody-graphtol"></tbody>
+      </table>
+    </div>
+  </div>
 </section>
 
 <!-- COLANYL -->
@@ -988,34 +1002,6 @@ const PRODUCTS = {
     {nome:"Hansa Amarelo G 02",          ci:"Pigment Yellow 1",  cor:"#E8D000",corte:"#F4EC78",luz:4,calor:3,solv:3,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Tintas imobiliárias"]},
     {nome:"Hansa Amarelo Brilhante 2GX 70",ci:"Pigment Yellow 74",cor:"#E0C800",corte:"#F0E470",luz:5,calor:4,solv:4,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Tintas imobiliárias"]},
   ],
-  pvfast: [
-    {nome:"PV Sólido Amarelo H9G",    ci:"Pigment Yellow 214", cor:"#F0E010",corte:"#F8F080",luz:8,calor:8,solv:8,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais"]},
-    {nome:"PV Sólido Amarelo HG",     ci:"Pigment Yellow 180", cor:"#E0C800",corte:"#F0E870",luz:8,calor:8,solv:8,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais","Tintas gráficas"]},
-    {nome:"PV Sólido Amarelo HGR",    ci:"Pigment Yellow 191", cor:"#D8B800",corte:"#ECD870",luz:7,calor:7,solv:7,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais","Tintas gráficas"]},
-    {nome:"PV Sólido Laranja H4GL 01",ci:"Pigment Orange 72",  cor:"#E87020",corte:"#F4B070",luz:7,calor:7,solv:7,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas gráficas","Campos especiais"]},
-    {nome:"PV Sólido Laranja GRL",    ci:"Pigment Orange 43",  cor:"#E86020",corte:"#F4A868",luz:8,calor:8,solv:8,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais","Tintas gráficas"]},
-    {nome:"PV Sólido Vermelho B",     ci:"Pigment Red 149",    cor:"#C81818",corte:"#E47070",luz:8,calor:8,solv:8,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais"]},
-    {nome:"PV Sólido Vermelho D3G",   ci:"Pigment Red 254",    cor:"#D82000",corte:"#EE8060",luz:8,calor:8,solv:7,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais"]},
-    {nome:"PV Sólido Vermelho 3B",    ci:"Pigment Red 144",    cor:"#A82030",corte:"#D87888",luz:8,calor:8,solv:8,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais","Tintas gráficas"]},
-    {nome:"PV Sólido Rosa E",         ci:"Pigment Red 122",    cor:"#D03070",corte:"#EC90B8",luz:8,calor:7,solv:7,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais","Tintas gráficas"]},
-    {nome:"PV Sólido Violeta RL",     ci:"Pigment Violet 23",  cor:"#6028A8",corte:"#B888D8",luz:7,calor:7,solv:7,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais"]},
-    {nome:"PV Sólido Azul BG",        ci:"Pigment Blue 15:3",  cor:"#1838C0",corte:"#78A0E0",luz:8,calor:8,solv:8,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais","Tintas gráficas"]},
-    {nome:"PV Sólido Verde GNX",      ci:"Pigment Green 7",    cor:"#1A6828",corte:"#78B078",luz:8,calor:8,solv:8,teor:"—",emb:"25 kg",apps:["Plásticos","Tintas industriais","Tintas gráficas"]},
-  ],
-  graphtol: [
-    {nome:"Graphtol Amarelo H10G",   ci:"Pigment Yellow 81",  cor:"#F0D800",corte:"#F8EE80",luz:5,calor:4,solv:4,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Papel"]},
-    {nome:"Graphtol Amarelo GG",     ci:"Pigment Yellow 17",  cor:"#E0CC00",corte:"#F0E880",luz:4,calor:3,solv:3,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
-    {nome:"Graphtol Amarelo 3GP",    ci:"Pigment Yellow 155", cor:"#D8C820",corte:"#EEE070",luz:7,calor:6,solv:6,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
-    {nome:"Graphtol Amarelo GR",     ci:"Pigment Yellow 13",  cor:"#D8B800",corte:"#EED868",luz:4,calor:3,solv:3,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Papel"]},
-    {nome:"Graphtol Laranja GPS",    ci:"Pigment Orange 13",  cor:"#E87020",corte:"#F4B068",luz:4,calor:3,solv:3,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
-    {nome:"Graphtol Laranja RL",     ci:"Pigment Orange 34",  cor:"#E06020",corte:"#F0A060",luz:4,calor:3,solv:3,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
-    {nome:"Graphtol Vermelho LG",    ci:"Pigment Red 53:1",   cor:"#D01818",corte:"#E87070",luz:5,calor:4,solv:4,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Papel"]},
-    {nome:"Graphtol Vermelho HF2B",  ci:"Pigment Red 208",    cor:"#B82838",corte:"#D87880",luz:5,calor:4,solv:4,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
-    {nome:"Graphtol Rubine L4B",     ci:"Pigment Red 57:1",   cor:"#A82848",corte:"#D08090",luz:4,calor:3,solv:3,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
-    {nome:"Graphtol Carmim HF3C",    ci:"Pigment Red 176",    cor:"#B83050",corte:"#E08090",luz:6,calor:5,solv:5,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Papel"]},
-    {nome:"Graphtol Carmim HF4C",    ci:"Pigment Red 185",    cor:"#C02848",corte:"#E07888",luz:6,calor:5,solv:5,teor:"—",emb:"25 kg",apps:["Tintas gráficas","Papel"]},
-    {nome:"Graphtol Azul AN",        ci:"Pigment Blue 15",    cor:"#1840B0",corte:"#80A0E0",luz:6,calor:5,solv:5,teor:"—",emb:"25 kg",apps:["Tintas gráficas"]},
-  ],
 };
 
 const LINE_MAP = {
@@ -1023,8 +1009,6 @@ const LINE_MAP = {
   novoperm:  {fab:"Sudarshan", label:"Novoperm®"},
   permanent: {fab:"Sudarshan", label:"Permanent®"},
   hansa:     {fab:"Sudarshan", label:"Hansa®"},
-  pvfast:    {fab:"Sudarshan", label:"PV Sólido®"},
-  graphtol:  {fab:"Sudarshan", label:"Graphtol®"},
   solutinte: {fab:"Sudarshan", label:"Solutint® E"},
 };
 
@@ -1428,6 +1412,83 @@ var COLANYL_CFG = {
   ]
 };
 
+
+var PVSOLIDO = [
+  {nome:"PV Sólido Amarelo H4G",ci:"P.Y. 151",ciFull:"Pigment Yellow 151",cor:"#EFD200",corte:"#F7E98A",classe:"Benzimidazolona",luz:"8",temp:"290",acidos:"5",alcalis:"5",bleed:"5",dens:"1,67",polio:true,warp:true,pvc:true,ps:false,pbt:false,pc:false,pa6:false},
+  {nome:"PV Sólido Amarelo HG 01",ci:"P.Y. 180",ciFull:"Pigment Yellow 180",cor:"#E0C800",corte:"#F0E870",classe:"Benzimidazolona",luz:"6-7",temp:"290",acidos:"5",alcalis:"5",bleed:"5",dens:"1,43",polio:true,warp:true,pvc:true,ps:true,pbt:true,pc:true,pa6:false},
+  {nome:"PV Sólido Amarelo HR 02",ci:"P.Y. 83",ciFull:"Pigment Yellow 83",cor:"#E8A81E",corte:"#F4D68E",classe:"Diazo",luz:"7",temp:"200",acidos:"5",alcalis:"5",bleed:"5",dens:"1,49",polio:true,warp:false,pvc:true,ps:false,pbt:false,pc:false,pa6:false},
+  {nome:"PV Sólido Amarelo HGR",ci:"P.Y. 191",ciFull:"Pigment Yellow 191",cor:"#D8B800",corte:"#ECD870",classe:"Monoazo Laca Cálcio",luz:"7",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,77",polio:true,warp:true,pvc:true,ps:true,pbt:true,pc:true,pa6:false},
+  {nome:"PV Sólido Amarelo H3R",ci:"P.Y. 181",ciFull:"Pigment Yellow 181",cor:"#E8B41C",corte:"#F4DC8C",classe:"Benzimidazolona",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,48",polio:true,warp:true,pvc:true,ps:true,pbt:true,pc:false,pa6:false},
+  {nome:"PV Sólido Alaranjado H4GL 01",ci:"P.O. 72",ciFull:"Pigment Orange 72",cor:"#E87020",corte:"#F4B070",classe:"Benzimidazolona",luz:"8",temp:"290",acidos:"5",alcalis:"5",bleed:"5",dens:"1,51",polio:true,warp:true,pvc:true,ps:true,pbt:false,pc:false,pa6:false},
+  {nome:"PV Sólido Alaranjado H2GL",ci:"P.O. 64",ciFull:"Pigment Orange 64",cor:"#E8631A",corte:"#F4A878",classe:"Benzimidazolona",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,62",polio:true,warp:false,pvc:true,ps:true,pbt:false,pc:false,pa6:false},
+  {nome:"PV Sólido Escarlate 4RF",ci:"P.R. 242",ciFull:"Pigment Red 242",cor:"#DC2A18",corte:"#EE8E7E",classe:"Diazo condensado",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,61",polio:true,warp:false,pvc:true,ps:true,pbt:true,pc:true,pa6:false},
+  {nome:"PV Sólido Vermelho D3G",ci:"P.R. 254",ciFull:"Pigment Red 254",cor:"#D82000",corte:"#EE8060",classe:"Dicetopirrolopirrol",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,62",polio:true,warp:false,pvc:true,ps:false,pbt:false,pc:false,pa6:false},
+  {nome:"PV Sólido Vermelho E5B",ci:"P.V. 19",ciFull:"Pigment Violet 19",cor:"#C0203C",corte:"#E0808F",classe:"Quinacridona",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,47",polio:true,warp:true,pvc:true,ps:true,pbt:true,pc:true,pa6:false},
+  {nome:"PV Sólido Rosa E",ci:"P.R. 122",ciFull:"Pigment Red 122",cor:"#D03070",corte:"#EC90B8",classe:"Quinacridona",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,47",polio:true,warp:true,pvc:true,ps:true,pbt:true,pc:true,pa6:false},
+  {nome:"PV Sólido Violeta Avermelhado ER",ci:"P.V. 19",ciFull:"Pigment Violet 19",cor:"#9B2D6B",corte:"#C883AC",classe:"Quinacridona",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,51",polio:true,warp:false,pvc:true,ps:true,pbt:true,pc:true,pa6:false},
+  {nome:"PV Sólido Violeta RL",ci:"P.V. 23",ciFull:"Pigment Violet 23",cor:"#6028A8",corte:"#B888D8",classe:"Dioxazina",luz:"7-8",temp:"280",acidos:"5",alcalis:"5",bleed:"4",dens:"1,49",polio:true,warp:false,pvc:true,ps:true,pbt:true,pc:true,pa6:false},
+  {nome:"PV Sólido Azul BG",ci:"P.B. 15:3",ciFull:"Pigment Blue 15:3",cor:"#1838C0",corte:"#78A0E0",classe:"Ftalocianina",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"1,62",polio:true,warp:false,pvc:true,ps:true,pbt:true,pc:true,pa6:true},
+  {nome:"PV Sólido Azul A4R",ci:"P.B. 15:1",ciFull:"Pigment Blue 15:1",cor:"#1840B0",corte:"#5070C8",classe:"Ftalocianina",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"4",dens:"1,61",polio:true,warp:false,pvc:true,ps:true,pbt:false,pc:false,pa6:false},
+  {nome:"PV Sólido Verde GNX",ci:"P.G. 7",ciFull:"Pigment Green 7",cor:"#1A6828",corte:"#78B078",classe:"Ftalocianina",luz:"8",temp:"300",acidos:"5",alcalis:"5",bleed:"5",dens:"2,06",polio:true,warp:false,pvc:true,ps:true,pbt:true,pc:true,pa6:false}
+];
+var GRAPHTOL = [
+  {nome:"Graphtol Amarelo GG",ci:"P.Y. 17",ciFull:"Pigment Yellow 17",cor:"#E0CC00",corte:"#F0E880",classe:"Diazo",luz:"7",temp:"200",acidos:"5",alcalis:"5",bleed:"3",dens:"1,39",polio:true,warp:false,pvc:true,ps:false,pbt:false,pc:false,pa6:false},
+  {nome:"Graphtol Amarelo GR",ci:"P.Y. 13",ciFull:"Pigment Yellow 13",cor:"#D8B800",corte:"#EED868",classe:"Diazo",luz:"6-7",temp:"200",acidos:"5",alcalis:"5",bleed:"3",dens:"1,34",polio:true,warp:false,pvc:true,ps:false,pbt:false,pc:false,pa6:false},
+  {nome:"Graphtol Alaranjado RL MX",ci:"P.O. 34",ciFull:"Pigment Orange 34",cor:"#E06020",corte:"#F0A060",classe:"Diazo",luz:"6-7",temp:"200",acidos:"5",alcalis:"5",bleed:"2-3",dens:"1,42",polio:true,warp:false,pvc:true,ps:false,pbt:false,pc:false,pa6:false},
+  {nome:"Graphtol Vermelho LC CN 09",ci:"P.R. 53:1",ciFull:"Pigment Red 53:1",cor:"#D82820",corte:"#EE8078",classe:"Monoazo Laca Bário",luz:"3",temp:"250",acidos:"5",alcalis:"5",bleed:"4-5",dens:"1,82",polio:true,warp:true,pvc:true,ps:true,pbt:false,pc:true,pa6:false},
+  {nome:"Graphtol Vermelho LG CN 09",ci:"P.R. 53:1",ciFull:"Pigment Red 53:1",cor:"#D01818",corte:"#E87070",classe:"Monoazo Laca Bário",luz:"3",temp:"270",acidos:"5",alcalis:"5",bleed:"4-5",dens:"1,86",polio:true,warp:true,pvc:true,ps:true,pbt:true,pc:false,pa6:false},
+  {nome:"Graphtol Vermelho F3RK 70 CN 09",ci:"P.R. 170",ciFull:"Pigment Red 170",cor:"#C82030",corte:"#E07070",classe:"Naftol AS",luz:"8",temp:"270",acidos:"5",alcalis:"5",bleed:"2",dens:"1,44",polio:true,warp:true,pvc:true,ps:false,pbt:false,pc:false,pa6:false},
+  {nome:"Graphtol Vermelho F5RK",ci:"P.R. 170",ciFull:"Pigment Red 170",cor:"#C01830",corte:"#DF5870",classe:"Naftol AS",luz:"8",temp:"250",acidos:"5",alcalis:"5",bleed:"—",dens:"1,4",polio:true,warp:false,pvc:false,ps:false,pbt:false,pc:false,pa6:false},
+  {nome:"Graphtol Vermelho PB CN",ci:"P.R. 48:2",ciFull:"Pigment Red 48:2",cor:"#C42038",corte:"#E07888",classe:"Monoazo Laca Cálcio",luz:"6",temp:"240",acidos:"4",alcalis:"4",bleed:"5",dens:"1,67",polio:true,warp:false,pvc:true,ps:true,pbt:false,pc:false,pa6:false},
+  {nome:"Graphtol Carmim HF3C",ci:"P.R. 176",ciFull:"Pigment Red 176",cor:"#B83050",corte:"#E08090",classe:"Benzimidazolona",luz:"7",temp:"270",acidos:"5",alcalis:"5",bleed:"5",dens:"1,41",polio:true,warp:true,pvc:true,ps:true,pbt:false,pc:true,pa6:false},
+  {nome:"Graphtol Rubi L7B 03",ci:"P.R. 57:1",ciFull:"Pigment Red 57:1",cor:"#A82848",corte:"#D08090",classe:"Monoazo Laca Cálcio",luz:"6-7",temp:"250",acidos:"4-5",alcalis:"5",bleed:"4-5",dens:"1,53",polio:true,warp:false,pvc:true,ps:true,pbt:false,pc:false,pa6:false},
+  {nome:"Graphtol Azul AN 01",ci:"P.B. 15",ciFull:"Pigment Blue 15",cor:"#1840B0",corte:"#80A0E0",classe:"Ftalocianina",luz:"8",temp:"160",acidos:"5",alcalis:"5",bleed:"4",dens:"1,6",polio:false,warp:false,pvc:true,ps:false,pbt:false,pc:false,pa6:false}
+];
+var PVSOLIDO_CFG = {
+  key:'pvfast', fab:'Sudarshan', data:PVSOLIDO,
+  columns:[
+    {kind:'name',field:'nome',label:'Produto'},
+    {kind:'classe',field:'classe',label:'Classe Química'},
+    {kind:'ci',field:'ci',label:'C.I.'},
+    {kind:'swatch',label:'Tom Pleno / Corte'},
+    {kind:'num',field:'luz',label:'Solidez à Luz',bar:8},
+    {kind:'num',field:'temp',label:'Estabilidade Térmica (°C)'},
+    {kind:'num',field:'acidos',label:'Solidez a Ácidos'},
+    {kind:'num',field:'alcalis',label:'Solidez a Álcalis'},
+    {kind:'num',field:'bleed',label:'Migração em PVC Plastificado'},
+    {kind:'num',field:'dens',label:'Densidade',unit:'g/cm\u00b3'},
+    {kind:'app',field:'polio',label:'Poliolefinas',app:'Poliolefinas'},
+    {kind:'app',field:'warp',label:'Poliolefinas (Warpage)',app:'Poliolefinas (warpage)'},
+    {kind:'app',field:'pvc',label:'PVC Plastificado',app:'PVC plastificado'},
+    {kind:'app',field:'ps',label:'Poliestireno',app:'Poliestireno'},
+    {kind:'app',field:'pbt',label:'Polibutileno Tereftalato (PBT)',app:'Polibutileno tereftalato (PBT)'},
+    {kind:'app',field:'pc',label:'Policarbonato (PC)',app:'Policarbonato (PC)'},
+    {kind:'app',field:'pa6',label:'Poliamida (PA6)',app:'Poliamida (PA6)'}
+  ]
+};
+var GRAPHTOL_CFG = {
+  key:'graphtol', fab:'Sudarshan', data:GRAPHTOL,
+  columns:[
+    {kind:'name',field:'nome',label:'Produto'},
+    {kind:'classe',field:'classe',label:'Classe Química'},
+    {kind:'ci',field:'ci',label:'C.I.'},
+    {kind:'swatch',label:'Tom Pleno / Corte'},
+    {kind:'num',field:'luz',label:'Solidez à Luz',bar:8},
+    {kind:'num',field:'temp',label:'Estabilidade Térmica (°C)'},
+    {kind:'num',field:'acidos',label:'Solidez a Ácidos'},
+    {kind:'num',field:'alcalis',label:'Solidez a Álcalis'},
+    {kind:'num',field:'bleed',label:'Migração em PVC Plastificado'},
+    {kind:'num',field:'dens',label:'Densidade',unit:'g/cm\u00b3'},
+    {kind:'app',field:'polio',label:'Poliolefinas',app:'Poliolefinas'},
+    {kind:'app',field:'warp',label:'Poliolefinas (Warpage)',app:'Poliolefinas (warpage)'},
+    {kind:'app',field:'pvc',label:'PVC Plastificado',app:'PVC plastificado'},
+    {kind:'app',field:'ps',label:'Poliestireno',app:'Poliestireno'},
+    {kind:'app',field:'pbt',label:'Polibutileno Tereftalato (PBT)',app:'Polibutileno tereftalato (PBT)'},
+    {kind:'app',field:'pc',label:'Policarbonato (PC)',app:'Policarbonato (PC)'},
+    {kind:'app',field:'pa6',label:'Poliamida (PA6)',app:'Poliamida (PA6)'}
+  ]
+};
+
 var LEGACY_SPECS_HTML='';
 
 function makeBar(v, elId) {
@@ -1754,6 +1815,8 @@ document.addEventListener('DOMContentLoaded', function() {
   buildSpecTable(CLARITINT_CFG);
   buildSpecTable(FLEXONYL_CFG);
   buildSpecTable(HOSTATINT_CFG);
+  buildSpecTable(PVSOLIDO_CFG);
+  buildSpecTable(GRAPHTOL_CFG);
   doSearch();
   // Fechar overlay
   document.getElementById('overlay').addEventListener('click', function(e) {
