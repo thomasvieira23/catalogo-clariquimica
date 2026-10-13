@@ -415,10 +415,6 @@ tr.product-card.hidden{display:none;}
       <div class="cover-sub">Pigmentos orgânicos e inorgânicos, dispersões aquosas e preparações pigmentárias para tintas, plásticos, couro e campos especiais.</div>
     </div>
     <div class="cover-bottom">
-      <div class="cover-index">
-        <div class="cover-index-item"><span class="cover-index-dot" style="background:#F78222"></span>Hostaperm · Novoperm · Permanent · Hansa</div>
-        <div class="cover-index-item"><span class="cover-index-dot" style="background:#4DA493"></span>PV Sólido · Graphtol</div>
-        <div class="cover-index-item"><span class="cover-index-dot" style="background:#0094DA"></span>Colanyl® · Hostatint</div>
       </div>
     </div>
   </div>
@@ -461,10 +457,6 @@ tr.product-card.hidden{display:none;}
   <div class="toolbar-row2">
     <select class="filter-select" id="appFilter" onchange="doSearch()">
       <option value="">Todas as aplicações</option>
-      <option>Tintas imobiliárias</option><option>Tintas industriais</option>
-      <option>Tintas gráficas</option><option>Plásticos</option>
-      <option>Couro</option><option>Papel</option><option>Campos especiais</option>
-      <option>Especialidades</option>
     </select>
     <span class="results-pill" id="resultsPill"></span>
   </div>
@@ -2426,6 +2418,38 @@ function filterFab(btn, fab) {
   doSearch();
 }
 
+
+// ── FILTRO DE APLICAÇÕES: agrupa as aplicações de cada produto em categorias do filtro ──
+var APP_CATS=[
+  ['Tintas decorativas e imobiliárias',/decorativ|imobili|emuls|esmalte/i],
+  ['Tintas industriais',/industri|tinta em pó/i],
+  ['Tintas gráficas',/gráfic/i],
+  ['Plásticos',/plástic|^abs$|^pet$|pvc|poli/i],
+  ['Construção civil',/ciment/i],
+  ['Madeira e vernizes',/madeira|verniz/i],
+  ['Couro',/couro/i],
+  ['Látex e fitas adesivas',/látex|fitas/i],
+  ['Agro (fertilizantes e defensivos)',/fertiliz|crop/i],
+  ['Home care e personal care',/home care|personal care/i],
+  ['Óleos, graxas, ceras e combustíveis',/óleo|graxa|ceras|gasolina|combust/i],
+  ['Resinas e artesanato',/artesanato|resina/i],
+  ['Pirotecnia',/pirot/i],
+  ['Especialidades',/especialidade/i]
+];
+function linkAppFilter(){
+  var used={};
+  var rows=document.querySelectorAll('.line-section .product-card');
+  for(var r=0;r<rows.length;r++){
+    var apps=(rows[r].getAttribute('data-apps')||'').split(','),cats='|';
+    for(var c=0;c<APP_CATS.length;c++){
+      for(var a=0;a<apps.length;a++){var t=apps[a].trim();if(t&&APP_CATS[c][1].test(t)){cats+=APP_CATS[c][0]+'|';used[APP_CATS[c][0]]=1;break;}}
+    }
+    rows[r].setAttribute('data-cats',cats);
+  }
+  var sel=document.getElementById('appFilter');
+  for(var k=0;k<APP_CATS.length;k++){if(used[APP_CATS[k][0]]){var o=document.createElement('option');o.textContent=APP_CATS[k][0];sel.appendChild(o);}}
+}
+
 function doSearch() {
   var q   = document.getElementById('searchInput').value.toLowerCase().trim();
   var app = document.getElementById('appFilter').value;
@@ -2434,14 +2458,13 @@ function doSearch() {
   for (var s = 0; s < sections.length; s++) {
     var sec    = sections[s];
     var fabOk  = !activeFab || sec.getAttribute('data-fab') === activeFab;
-    var appOk  = !app || (sec.getAttribute('data-apps') || '').indexOf(app) >= 0;
-    if (!fabOk || !appOk) { sec.classList.add('hidden'); continue; }
+    if (!fabOk) { sec.classList.add('hidden'); continue; }
     var cards = sec.querySelectorAll('.product-card');
     var vis = 0;
     for (var c = 0; c < cards.length; c++) {
       var card = cards[c];
       var sm = !q || (card.getAttribute('data-search') || '').indexOf(q) >= 0;
-      var am = !app || (card.getAttribute('data-apps') || '').indexOf(app) >= 0;
+      var am = !app || (card.getAttribute('data-cats') || '').indexOf('|' + app + '|') >= 0;
       if (sm && am) { card.classList.remove('hidden'); vis++; total++; }
       else card.classList.add('hidden');
     }
@@ -2488,6 +2511,7 @@ document.addEventListener('DOMContentLoaded', function() {
   buildSpecTable(FERRIT_CFG);
   buildSpecTable(COLORTHERM_CFG);
   buildSpecTable(LX_MIX_CFG);
+  linkAppFilter();
   doSearch();
   // Fechar overlay
   document.getElementById('overlay').addEventListener('click', function(e) {
